@@ -3,9 +3,9 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title data-i18n="meta.title">Prospio - Prospection IA Tout-en-un</title>
-    <meta name="description" data-i18n="meta.description" content="Optimisez vos ventes avec notre plateforme de prospection IA tout-en-un">
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&display=swap" rel="stylesheet">
+    <title data-i18n="meta.title">Mentions légales - Prospio</title>
+    <meta name="description" data-i18n="meta.description" content="Mentions légales de Prospio - Informations légales et éditeur">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
     <style>
         * { margin: 0; padding: 0; box-sizing: border-box; font-family: 'Inter', sans-serif; }
         body { background-color: #f8f9fb; color: #333; line-height: 1.6; }
@@ -26,6 +26,13 @@
             font-weight: 500;
         }
         
+        /* Navbar */
+        nav { position: sticky; top: 0; background: white; box-shadow: 0 2px 10px rgba(0,0,0,0.05); padding: 1rem 2rem; display: flex; justify-content: space-between; align-items: center; z-index: 1000; }
+        nav .logo { font-size: 1.5rem; font-weight: 700; color: #4f46e5; }
+        nav ul { display: flex; gap: 2rem; list-style: none; }
+        nav ul li a { text-decoration: none; color: #333; font-weight: 500; transition: color 0.3s; }
+        nav ul li a:hover { color: #4f46e5; }
+        
         .container { max-width: 800px; margin: 0 auto; padding: 2rem; }
         header { text-align: center; padding: 3rem 0 2rem; }
         h1 { font-size: 2.5rem; color: #4f46e5; margin-bottom: 1rem; }
@@ -34,7 +41,9 @@
         p { margin-bottom: 1rem; }
         .back { display: inline-block; margin-top: 2rem; color: #4f46e5; text-decoration: none; font-weight: 500; }
         .back:hover { text-decoration: underline; }
-        footer { text-align: center; padding: 2rem; color: #666; font-size: 0.9rem; }
+        footer { background: #1f2937; color: white; padding: 2rem; text-align: center; font-size: 0.9rem; margin-top: 3rem; }
+        footer a { color: #93c5fd; text-decoration: none; }
+        footer a:hover { text-decoration: underline; }
     </style>
 </head>
 <body>
@@ -47,6 +56,16 @@
             <option value="de">🇩🇪 Deutsch</option>
         </select>
     </div>
+
+    <!-- Navbar -->
+    <nav>
+        <div class="logo" data-i18n="nav.logo">Prospio</div>
+        <ul>
+            <li><a href="index.html" data-i18n="nav.home">Accueil</a></li>
+            <li><a href="mentions-legales.html" data-i18n="nav.legal">Mentions légales</a></li>
+            <li><a href="politique-confidentialite.html" data-i18n="nav.privacy">Politique de confidentialité</a></li>
+        </ul>
+    </nav>
 
     <div class="container">
         <header>
@@ -101,103 +120,90 @@
                 Les présentes mentions légales sont régies par le droit français. Tout litige relatif à l'utilisation du site sera soumis à la compétence exclusive des tribunaux français.
             </p>
             
-            <a href="/" class="back" data-i18n="legal.back">← Retour à l'accueil</a>
+            <a href="index.html" class="back" data-i18n="legal.back">← Retour à l'accueil</a>
         </div>
-        
-        <footer>
-            <p data-i18n="footer.copyright">© 2025 Prospio. Tous droits réservés.</p>
-        </footer>
     </div>
+    
+    <footer>
+        <p><span data-i18n="footer.copyright">© 2025 Prospio. Tous droits réservés.</span> | 
+        <a href="mentions-legales.html" data-i18n="footer.legal">Mentions légales</a> | 
+        <a href="politique-confidentialite.html" data-i18n="footer.privacy">Politique de confidentialité</a></p>
+    </footer>
 
     <script>
-        // Translation System (same as index.html)
-        // Remplacez le script I18n existant par celui-ci dans index.html, mentions-legales.html et politique-confidentialite.html
+        class I18n {
+            constructor() {
+                this.currentLang = this.detectLanguage();
+                this.translations = {};
+                this.init();
+            }
 
-class I18n {
-    constructor() {
-        // Détecter la langue du navigateur si pas de préférence stockée
-        this.currentLang = this.detectLanguage();
-        this.translations = {};
-        this.init();
-    }
+            detectLanguage() {
+                const storedLang = localStorage.getItem('preferredLanguage');
+                if (storedLang) return storedLang;
 
-    detectLanguage() {
-        // 1. Vérifier si une langue est déjà stockée
-        const storedLang = localStorage.getItem('preferredLanguage');
-        if (storedLang) return storedLang;
+                const browserLang = navigator.language || navigator.userLanguage;
+                const shortLang = browserLang.split('-')[0];
+                const supportedLangs = ['en', 'fr', 'es', 'de'];
+                return supportedLangs.includes(shortLang) ? shortLang : 'en';
+            }
 
-        // 2. Détecter la langue du navigateur
-        const browserLang = navigator.language || navigator.userLanguage;
-        const shortLang = browserLang.split('-')[0]; // ex: 'en-US' -> 'en'
-
-        // 3. Vérifier si la langue est supportée
-        const supportedLangs = ['en', 'fr', 'es', 'de'];
-        return supportedLangs.includes(shortLang) ? shortLang : 'en'; // Anglais par défaut
-    }
-
-    async init() {
-        await this.loadTranslations();
-        this.updateLanguage();
-        this.setupEventListeners();
-    }
-
-    async loadTranslations() {
-        try {
-            const response = await fetch(`locales/${this.currentLang}.json`);
-            this.translations = await response.json();
-        } catch (error) {
-            console.error('Error loading translations:', error);
-            // Fallback to English if translation file fails to load
-            if (this.currentLang !== 'en') {
-                this.currentLang = 'en';
+            async init() {
                 await this.loadTranslations();
+                this.updateLanguage();
+                this.setupEventListeners();
+            }
+
+            async loadTranslations() {
+                try {
+                    const response = await fetch(`locales/${this.currentLang}.json`);
+                    this.translations = await response.json();
+                } catch (error) {
+                    console.error('Error loading translations:', error);
+                    if (this.currentLang !== 'en') {
+                        this.currentLang = 'en';
+                        await this.loadTranslations();
+                    }
+                }
+            }
+
+            updateLanguage() {
+                document.documentElement.lang = this.currentLang;
+                
+                document.querySelectorAll('[data-i18n]').forEach(element => {
+                    const keys = element.getAttribute('data-i18n').split('.');
+                    const value = this.getNestedValue(this.translations, keys);
+                    
+                    if (element.tagName === 'META') {
+                        element.content = value;
+                    } else {
+                        element.textContent = value;
+                    }
+                });
+
+                const selector = document.getElementById('languageSelect');
+                if (selector) selector.value = this.currentLang;
+            }
+
+            getNestedValue(obj, keys) {
+                return keys.reduce((o, i) => o?.[i], obj);
+            }
+
+            setupEventListeners() {
+                const selector = document.getElementById('languageSelect');
+                if (selector) {
+                    selector.addEventListener('change', (e) => {
+                        this.currentLang = e.target.value;
+                        localStorage.setItem('preferredLanguage', this.currentLang);
+                        this.loadTranslations().then(() => this.updateLanguage());
+                    });
+                }
             }
         }
-    }
 
-    updateLanguage() {
-        // Mettre à jour l'attribut lang de la page
-        document.documentElement.lang = this.currentLang;
-        
-        // Mettre à jour tous les éléments avec data-i18n
-        document.querySelectorAll('[data-i18n]').forEach(element => {
-            const keys = element.getAttribute('data-i18n').split('.');
-            const value = this.getNestedValue(this.translations, keys);
-            
-            if (element.tagName === 'META') {
-                element.content = value;
-            } else if (element.tagName === 'INPUT' && element.hasAttribute('data-i18n-placeholder')) {
-                element.placeholder = value;
-            } else {
-                element.textContent = value;
-            }
+        document.addEventListener('DOMContentLoaded', () => {
+            new I18n();
         });
-
-        // Mettre à jour le sélecteur de langue
-        const selector = document.getElementById('languageSelect');
-        if (selector) selector.value = this.currentLang;
-    }
-
-    getNestedValue(obj, keys) {
-        return keys.reduce((o, i) => o?.[i], obj);
-    }
-
-    setupEventListeners() {
-        const selector = document.getElementById('languageSelect');
-        if (selector) {
-            selector.addEventListener('change', (e) => {
-                this.currentLang = e.target.value;
-                localStorage.setItem('preferredLanguage', this.currentLang);
-                this.loadTranslations().then(() => this.updateLanguage());
-            });
-        }
-    }
-}
-
-// Initialiser I18n quand le DOM est chargé
-document.addEventListener('DOMContentLoaded', () => {
-    new I18n();
-});
     </script>
 </body>
 </html>
