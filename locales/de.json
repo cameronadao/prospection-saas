@@ -1,0 +1,192 @@
+{
+    "nav": {
+      "logo": "Prospio",
+      "features": "Funktionen",
+      "pricing": "Preise",
+      "contact": "Kontakt"
+    },
+    "header": {
+      "title": "Die All-in-One-KI-Prospektion",
+      "subtitle": "Optimieren Sie Ihre Verkäufe mit einer Plattform, die Scraping, KI-E-Mail-Marketing, CRM und Multi-Channel-Automatisierung integriert.",
+      "countdown": "Start in:"
+    },
+    "hero": {
+      "title": "Revolutionieren Sie Ihre digitale Prospektion",
+      "subtitle": "Multi-Source-Scraping, integriertes CRM, KI-Agenten und erweiterte Automatisierungen: Alles ist darauf ausgelegt, Ihre Konversionsrate zu maximieren.",
+      "cta": "Startangebot nutzen"
+    },
+    "features": {
+      "title": "Wichtige Funktionen",
+      "scraping": {
+        "title": "Intelligentes Scraping",
+        "desc": "Gezielte Extraktion von LinkedIn, Google Maps, Apollo.io und mehr."
+      },
+      "emailing": {
+        "title": "KI-E-Mail-Marketing",
+        "desc": "Überzeugende Texte mit ChatGPT, Grok oder Copilot."
+      },
+      "multicanal": {
+        "title": "Multi-Channel",
+        "desc": "Automatisierte Kampagnen auf LinkedIn, WhatsApp, E-Mail und Telefon."
+      },
+      "crm": {
+        "title": "Integriertes CRM",
+        "desc": "Visuelle Pipeline, KI-Bewertung und HubSpot/Salesforce-Synchronisation."
+      },
+      "mobile": {
+        "title": "Mobile App",
+        "desc": "Verwalten Sie Ihre Leads überall, auch offline."
+      },
+      "agents": {
+        "title": "KI-Agenten",
+        "desc": "24/7-Chatbots auf Ihrer Website, WhatsApp und LinkedIn."
+      }
+    },
+    "form": {
+      "title": "Sonderstartangebot",
+      "subtitle": "Die ersten 30 Kunden erhalten -50% lebenslang!",
+      "placeholder": "Ihre geschäftliche E-Mail",
+      "button": "Anmelden",
+      "bonus": "Frühzeitiger Zugang + exklusiver Bonus"
+    },
+    "footer": {
+      "copyright": "© 2025 Prospio. Alle Rechte vorbehalten.",
+      "legal": "Impressum",
+      "privacy": "Datenschutzrichtlinie"
+    },
+    "countdown": {
+      "days": "T",
+      "hours": "Std",
+      "minutes": "Min",
+      "seconds": "Sek"
+    },
+    "meta": {
+      "title": "Prospio - All-in-One-KI-Prospektion",
+      "description": "Optimieren Sie Ihre Verkäufe mit unserer All-in-One-KI-Prospektionsplattform"
+    },
+    "legal": {
+      "title": "Impressum",
+      "subtitle": "Gemäß Artikel 6 des Gesetzes Nr. 2004-575 vom 21. Juni 2004",
+      "editor": {
+        "title": "Herausgeber der Website",
+        "content": "<strong>Prospio</strong><br>SAS mit einem Kapital von 10.000 €<br>Sitz: 123 Avenue des Champs-Élysées, 75008 Paris<br>RCS Paris: 123 456 789<br>Umsatzsteuer-Identifikationsnummer: FR12 345 678 901"
+      },
+      "director": {
+        "title": "Veröffentlichungsleiter",
+        "content": "Cameron Adao<br>E-Mail: contact@prospio.app"
+      },
+      "hosting": {
+        "title": "Hosting",
+        "content": "<strong>Netlify</strong><br>610 22nd Street, Suite 315<br>San Francisco, CA 94107<br>Vereinigte Staaten"
+      },
+      "intellectual": {
+        "title": "Geistiges Eigentum",
+        "content": "Der gesamte Inhalt dieser Website (Texte, Bilder, Grafiken, Logos, Symbole) ist ausschließliches Eigentum von Prospio, mit Ausnahme von Marken, Logos oder Inhalten, die anderen Partnerunternehmen gehören.",
+        "content2": "Jegliche Vervielfältigung, Verbreitung, Modifikation oder Anpassung dieser Inhalte ist ohne vorherige schriftliche Genehmigung strengstens untersagt."
+      },
+      "liability": {
+        "title": "Haftungsausschluss",
+        "content": "Prospio bemüht sich, genaue und aktuelle Informationen auf dieser Website bereitzustellen, kann jedoch nicht die Genauigkeit, Vollständigkeit oder Aktualität der bereitgestellten Informationen garantieren.",
+        "content2": "Die Website kann Links zu Websites von Drittanbietern enthalten. Prospio lehnt jede Verantwortung für den Inhalt dieser externen Websites ab."
+      },
+      "law": {
+        "title": "Anwendbares Recht",
+        "content": "Diese rechtlichen Hinweise unterliegen französischem Recht. Jegliche Streitigkeit im Zusammenhang mit der Nutzung der Website unterliegt der ausschließlichen Zuständigkeit der französischen Gerichte."
+      },
+      "back": "← Zurück zur Startseite"
+    },
+    "privacy": {
+      "title": "Datenschutzrichtlinie",
+      "lastUpdate": "Letzte Aktualisierung: 11. August 2025",
+      "collection": {
+        "title": "1. Erhebung personenbezogener Daten",
+        "intro": "Prospio erhebt die folgenden Daten im Rahmen seiner Dienstleistungen:",
+        "id": "Identifikationsdaten: Name, Vorname, E-Mail-Adresse, Telefonnummer",
+        "professional": "Berufsdaten: Position, Unternehmen, Branche",
+        "connection": "Verbindungsdaten: IP-Adresse, Browsertyp, Zugriffszeiten",
+        "prospecting": "Prospektionsdaten: durch Scraping gesammelte Informationen (mit Einwilligung)"
+      },
+      "purpose": {
+        "title": "2. Zwecke der Verarbeitung",
+        "intro": "Ihre Daten werden verwendet für:",
+        "service": "Bereitstellung unserer Prospektions- und CRM-Dienstleistungen",
+        "experience": "Personalisierung Ihrer Benutzererfahrung",
+        "improvement": "Verbesserung unserer Dienstleistungen und Funktionen",
+        "communication": "Kommunikation mit Ihnen bezüglich Ihres Kontos",
+        "legal": "Erfüllung unserer gesetzlichen und regulatorischen Verpflichtungen"
+      },
+      "legalBasis": {
+        "title": "3. Rechtsgrundlage der Verarbeitung",
+        "intro": "Wir verarbeiten Ihre Daten auf folgenden Rechtsgrundlagen:",
+        "consent": "Einwilligung",
+        "consentDesc": ": für Scraping und den Versand kommerzieller Kommunikation",
+        "contract": "Vertragsdurchführung",
+        "contractDesc": ": zur Erbringung der abonnierten Dienstleistungen",
+        "legitimate": "Berechtigtes Interesse",
+        "legitimateDesc": ": zur Verbesserung unserer Dienstleistungen und Betrugsprävention",
+        "legal": "Gesetzliche Verpflichtungen",
+        "legalDesc": ": zur Einhaltung geltender Vorschriften"
+      },
+      "retention": {
+        "title": "4. Datenspeicherung",
+        "intro": "Ihre Daten werden für folgende Zeiträume gespeichert:",
+        "customer": "Kundendaten: während der Vertragslaufzeit und 3 Jahre nach Kündigung",
+        "prospecting": "Prospektionsdaten: maximal 1 Jahr (sofern keine ausdrückliche Einwilligung)",
+        "technical": "Technische Daten: 13 Monate für Verbindungsprotokolle",
+        "marketing": "Marketingdaten: 3 Jahre nach dem letzten Kontakt"
+      },
+      "sharing": {
+        "title": "5. Datenweitergabe",
+        "intro": "Wir geben Ihre Daten nur weiter an:",
+        "providers": "Unsere technischen Dienstleister (Hosting, API-Anbieter)",
+        "platforms": "Integrierte Drittplattformen (HubSpot, Salesforce, etc.)",
+        "authorities": "Zuständige Behörden auf gesetzliche Anforderung",
+        "noSale": "Wir verkaufen niemals Ihre persönlichen Daten an Dritte."
+      },
+      "rights": {
+        "title": "6. Ihre Rechte",
+        "intro": "Gemäß DSGVO haben Sie folgende Rechte:",
+        "access": "Auskunftsrecht",
+        "accessDesc": ": Kenntnis der über Sie gespeicherten Daten",
+        "rectification": "Berichtigungsrecht",
+        "rectificationDesc": ": Korrektur ungenauer Daten",
+        "deletion": "Löschrecht",
+        "deletionDesc": ": Löschung Ihrer Daten (Recht auf Vergessenwerden)",
+        "limitation": "Einschränkungsrecht",
+        "limitationDesc": ": Einschränkung der Verarbeitung Ihrer Daten",
+        "portability": "Übertragbarkeitsrecht",
+        "portabilityDesc": ": Erhalt Ihrer Daten in einem lesbaren Format",
+        "opposition": "Widerspruchsrecht",
+        "oppositionDesc": ": Widerspruch gegen die Verarbeitung Ihrer Daten",
+        "contact": "Zur Ausübung dieser Rechte kontaktieren Sie uns unter: <strong>privacy@prospio.app</strong>"
+      },
+      "security": {
+        "title": "7. Datensicherheit",
+        "intro": "Wir implementieren angemessene Sicherheitsmaßnahmen zum Schutz Ihrer Daten:",
+        "encryption": "Datenverschlüsselung (SSL/TLS)",
+        "access": "Strikter Zugangskontrollen zu den Systemen",
+        "training": "Regelmäßige Schulungen des Personals im Datenschutz",
+        "audits": "Periodische Sicherheitsaudits"
+      },
+      "cookies": {
+        "title": "8. Cookies",
+        "intro": "Wir verwenden Cookies für:",
+        "technical": "Technischen Betrieb der Website",
+        "analytics": "Leistungs- und Verkehrsanalyse",
+        "personalization": "Personalisierung Ihrer Erfahrung",
+        "management": "Sie können Ihre Präferenzen über die Browsereinstellungen verwalten."
+      },
+      "modifications": {
+        "title": "9. Änderungen",
+        "intro": "Wir behalten uns das Recht vor, diese Richtlinie jederzeit zu ändern. Änderungen treten in Kraft, sobald sie auf der Website veröffentlicht werden. Wir werden Sie über wesentliche Änderungen per E-Mail informieren."
+      },
+      "contact": {
+        "title": "10. Kontakt",
+        "intro": "Bei Fragen zu dieser Datenschutzrichtlinie kontaktieren Sie uns:",
+        "email": "E-Mail:",
+        "address": "Adresse:",
+        "dpo": "DSB"
+      },
+      "back": "← Zurück zur Startseite"
+    }
+  }

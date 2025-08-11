@@ -1,0 +1,63 @@
+{
+    "nav": {
+      "logo": "Prospio",
+      "features": "Features",
+      "pricing": "Pricing",
+      "contact": "Contact"
+    },
+    "header": {
+      "title": "The All-in-One AI Prospecting",
+      "subtitle": "Optimize your sales with a platform integrating scraping, AI emailing, CRM and multi-channel automation.",
+      "countdown": "Launch in:"
+    },
+    "hero": {
+      "title": "Revolutionize Your Digital Prospecting",
+      "subtitle": "Multi-source scraping, integrated CRM, AI agents and advanced automations: everything designed to maximize your conversion rate.",
+      "cta": "Take Advantage of Launch Offer"
+    },
+    "features": {
+      "title": "Key Features",
+      "scraping": {
+        "title": "Intelligent Scraping",
+        "desc": "Targeted extraction from LinkedIn, Google Maps, Apollo.io and more."
+      },
+      "emailing": {
+        "title": "AI Emailing",
+        "desc": "Persuasive writing with ChatGPT, Grok or Copilot."
+      },
+      "multicanal": {
+        "title": "Multi-Channel",
+        "desc": "Automated campaigns on LinkedIn, WhatsApp, Email and Phone."
+      },
+      "crm": {
+        "title": "Integrated CRM",
+        "desc": "Visual pipeline, AI scoring and HubSpot/Salesforce synchronization."
+      },
+      "mobile": {
+        "title": "Mobile App",
+        "desc": "Manage your leads anywhere, even offline."
+      },
+      "agents": {
+        "title": "AI Agents",
+        "desc": "24/7 chatbots on your website, WhatsApp and LinkedIn."
+      }
+    },
+    "form": {
+      "title": "Special Launch Offer",
+      "subtitle": "First 30 customers get -50% for life!",
+      "placeholder": "Your professional email",
+      "button": "Sign Up",
+      "bonus": "Early access + exclusive bonus"
+    },
+    "footer": {
+      "copyright": "© 2025 Prospio. All rights reserved.",
+      "legal": "Legal Notice",
+      "privacy": "Privacy Policy"
+    },
+    "countdown": {
+      "days": "d",
+      "hours": "h",
+      "minutes": "m",
+      "seconds": "s"
+    }
+  }

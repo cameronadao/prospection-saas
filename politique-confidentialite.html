@@ -3,11 +3,29 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Politique de confidentialité - Prospio</title>
+    <title data-i18n="meta.title">Politique de confidentialité - Prospio</title>
+    <meta name="description" data-i18n="meta.description" content="Politique de confidentialité de Prospio - Protection de vos données personnelles">
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
     <style>
         * { margin: 0; padding: 0; box-sizing: border-box; font-family: 'Inter', sans-serif; }
         body { background-color: #f8f9fb; color: #333; line-height: 1.6; }
+        
+        /* Language Selector */
+        .lang-selector {
+            position: absolute;
+            top: 1rem;
+            right: 1rem;
+            z-index: 1001;
+        }
+        .lang-selector select {
+            padding: 0.5rem 1rem;
+            border-radius: 25px;
+            border: 1px solid #ddd;
+            background: white;
+            cursor: pointer;
+            font-weight: 500;
+        }
+        
         .container { max-width: 800px; margin: 0 auto; padding: 2rem; }
         header { text-align: center; padding: 3rem 0 2rem; }
         h1 { font-size: 2.5rem; color: #4f46e5; margin-bottom: 1rem; }
@@ -19,108 +37,180 @@
         .back:hover { text-decoration: underline; }
         footer { text-align: center; padding: 2rem; color: #666; font-size: 0.9rem; }
         .highlight { background-color: #f0f4ff; padding: 0.5rem; border-radius: 4px; }
+        .last-update { text-align: center; margin-bottom: 2rem; color: #666; font-style: italic; }
     </style>
 </head>
 <body>
+    <!-- Language Selector -->
+    <div class="lang-selector">
+        <select id="languageSelect">
+            <option value="fr">🇫🇷 Français</option>
+            <option value="en">🇬🇧 English</option>
+            <option value="es">🇪🇸 Español</option>
+            <option value="de">🇩🇪 Deutsch</option>
+        </select>
+    </div>
+
     <div class="container">
         <header>
-            <h1>Politique de confidentialité</h1>
-            <p>Dernière mise à jour : 11 août 2025</p>
+            <h1 data-i18n="privacy.title">Politique de confidentialité</h1>
+            <p class="last-update" data-i18n="privacy.lastUpdate">Dernière mise à jour : 11 août 2025</p>
         </header>
         
         <div class="content">
-            <h2>1. Collecte des données personnelles</h2>
-            <p>Nexora collecte les données suivantes dans le cadre de ses services :</p>
+            <h2 data-i18n="privacy.collection.title">1. Collecte des données personnelles</h2>
+            <p data-i18n="privacy.collection.intro">Prospio collecte les données suivantes dans le cadre de ses services :</p>
             <ul>
-                <li>Données d'identification : nom, prénom, adresse email, numéro de téléphone</li>
-                <li>Données professionnelles : poste, entreprise, secteur d'activité</li>
-                <li>Données de connexion : adresse IP, type de navigateur, heures d'accès</li>
-                <li>Données de prospection : informations collectées via le scraping (avec consentement)</li>
+                <li data-i18n="privacy.collection.id">Données d'identification : nom, prénom, adresse email, numéro de téléphone</li>
+                <li data-i18n="privacy.collection.professional">Données professionnelles : poste, entreprise, secteur d'activité</li>
+                <li data-i18n="privacy.collection.connection">Données de connexion : adresse IP, type de navigateur, heures d'accès</li>
+                <li data-i18n="privacy.collection.prospecting">Données de prospection : informations collectées via le scraping (avec consentement)</li>
             </ul>
             
-            <h2>2. Finalités du traitement</h2>
-            <p>Vos données sont utilisées pour :</p>
+            <h2 data-i18n="privacy.purpose.title">2. Finalités du traitement</h2>
+            <p data-i18n="privacy.purpose.intro">Vos données sont utilisées pour :</p>
             <ul>
-                <li>Fournir nos services de prospection et de CRM</li>
-                <li>Personnaliser votre expérience utilisateur</li>
-                <li>Améliorer nos services et fonctionnalités</li>
-                <li>Communiquer avec vous concernant votre compte</li>
-                <li>Respecter nos obligations légales et réglementaires</li>
+                <li data-i18n="privacy.purpose.service">Fournir nos services de prospection et de CRM</li>
+                <li data-i18n="privacy.purpose.experience">Personnaliser votre expérience utilisateur</li>
+                <li data-i18n="privacy.purpose.improvement">Améliorer nos services et fonctionnalités</li>
+                <li data-i18n="privacy.purpose.communication">Communiquer avec vous concernant votre compte</li>
+                <li data-i18n="privacy.purpose.legal">Respecter nos obligations légales et réglementaires</li>
             </ul>
             
-            <h2>3. Base légale du traitement</h2>
-            <p>Nous traitons vos données sur les bases légales suivantes :</p>
+            <h2 data-i18n="privacy.legalBasis.title">3. Base légale du traitement</h2>
+            <p data-i18n="privacy.legalBasis.intro">Nous traitons vos données sur les bases légales suivantes :</p>
             <ul>
-                <li><span class="highlight">Consentement</span> : pour le scraping et l'envoi de communications commerciales</li>
-                <li><span class="highlight">Exécution d'un contrat</span> : pour fournir les services souscrits</li>
-                <li><span class="highlight">Intérêt légitime</span> : pour améliorer nos services et prévenir les fraudes</li>
-                <li><span class="highlight">Obligations légales</span> : pour respecter la réglementation en vigueur</li>
+                <li><span class="highlight" data-i18n="privacy.legalBasis.consent">Consentement</span> <span data-i18n="privacy.legalBasis.consentDesc">: pour le scraping et l'envoi de communications commerciales</span></li>
+                <li><span class="highlight" data-i18n="privacy.legalBasis.contract">Exécution d'un contrat</span> <span data-i18n="privacy.legalBasis.contractDesc">: pour fournir les services souscrits</span></li>
+                <li><span class="highlight" data-i18n="privacy.legalBasis.legitimate">Intérêt légitime</span> <span data-i18n="privacy.legalBasis.legitimateDesc">: pour améliorer nos services et prévenir les fraudes</span></li>
+                <li><span class="highlight" data-i18n="privacy.legalBasis.legal">Obligations légales</span> <span data-i18n="privacy.legalBasis.legalDesc">: pour respecter la réglementation en vigueur</span></li>
             </ul>
             
-            <h2>4. Conservation des données</h2>
-            <p>Vos données sont conservées selon les durées suivantes :</p>
+            <h2 data-i18n="privacy.retention.title">4. Conservation des données</h2>
+            <p data-i18n="privacy.retention.intro">Vos données sont conservées selon les durées suivantes :</p>
             <ul>
-                <li>Données clients : pendant la durée du contrat et 3 ans après sa résiliation</li>
-                <li>Données de prospection : 1 an maximum (sauf consentement explicite)</li>
-                <li>Données techniques : 13 mois pour les logs de connexion</li>
-                <li>Données marketing : 3 ans après le dernier contact</li>
+                <li data-i18n="privacy.retention.customer">Données clients : pendant la durée du contrat et 3 ans après sa résiliation</li>
+                <li data-i18n="privacy.retention.prospecting">Données de prospection : 1 an maximum (sauf consentement explicite)</li>
+                <li data-i18n="privacy.retention.technical">Données techniques : 13 mois pour les logs de connexion</li>
+                <li data-i18n="privacy.retention.marketing">Données marketing : 3 ans après le dernier contact</li>
             </ul>
             
-            <h2>5. Partage des données</h2>
-            <p>Nous ne partageons vos données qu'avec :</p>
+            <h2 data-i18n="privacy.sharing.title">5. Partage des données</h2>
+            <p data-i18n="privacy.sharing.intro">Nous ne partageons vos données qu'avec :</p>
             <ul>
-                <li>Nos sous-traitants techniques (hébergeurs, fournisseurs d'API)</li>
-                <li>Les plateformes tierces intégrées (HubSpot, Salesforce, etc.)</li>
-                <li>Les autorités compétentes sur demande légale</li>
+                <li data-i18n="privacy.sharing.providers">Nos sous-traitants techniques (hébergeurs, fournisseurs d'API)</li>
+                <li data-i18n="privacy.sharing.platforms">Les plateformes tierces intégrées (HubSpot, Salesforce, etc.)</li>
+                <li data-i18n="privacy.sharing.authorities">Les autorités compétentes sur demande légale</li>
             </ul>
-            <p><strong>Nous ne vendons jamais vos données personnelles à des tiers.</strong></p>
+            <p data-i18n="privacy.sharing.noSale"><strong>Nous ne vendons jamais vos données personnelles à des tiers.</strong></p>
             
-            <h2>6. Vos droits</h2>
-            <p>Conformément au RGPD, vous disposez des droits suivants :</p>
+            <h2 data-i18n="privacy.rights.title">6. Vos droits</h2>
+            <p data-i18n="privacy.rights.intro">Conformément au RGPD, vous disposez des droits suivants :</p>
             <ul>
-                <li><strong>Droit d'accès</strong> : connaître les données que nous détenons sur vous</li>
-                <li><strong>Droit de rectification</strong> : corriger des données inexactes</li>
-                <li><strong>Droit de suppression</strong> : supprimer vos données (droit à l'oubli)</li>
-                <li><strong>Droit à la limitation</strong> : limiter le traitement de vos données</li>
-                <li><strong>Droit à la portabilité</strong> : récupérer vos données dans un format lisible</li>
-                <li><strong>Droit d'opposition</strong> : vous opposer au traitement de vos données</li>
-            </ul>
-            
-            <p>Pour exercer ces droits, contactez-nous à : <strong>privacy@nexora.app</strong></p>
-            
-            <h2>7. Sécurité des données</h2>
-            <p>Nous mettons en œuvre des mesures de sécurité appropriées pour protéger vos données :</p>
-            <ul>
-                <li>Chiffrement des données (SSL/TLS)</li>
-                <li>Contrôle d'accès strict aux systèmes</li>
-                <li>Formations régulières du personnel à la protection des données</li>
-                <li>Audits de sécurité périodiques</li>
+                <li><strong data-i18n="privacy.rights.access">Droit d'accès</strong> <span data-i18n="privacy.rights.accessDesc">: connaître les données que nous détenons sur vous</span></li>
+                <li><strong data-i18n="privacy.rights.rectification">Droit de rectification</strong> <span data-i18n="privacy.rights.rectificationDesc">: corriger des données inexactes</span></li>
+                <li><strong data-i18n="privacy.rights.deletion">Droit de suppression</strong> <span data-i18n="privacy.rights.deletionDesc">: supprimer vos données (droit à l'oubli)</span></li>
+                <li><strong data-i18n="privacy.rights.limitation">Droit à la limitation</strong> <span data-i18n="privacy.rights.limitationDesc">: limiter le traitement de vos données</span></li>
+                <li><strong data-i18n="privacy.rights.portability">Droit à la portabilité</strong> <span data-i18n="privacy.rights.portabilityDesc">: récupérer vos données dans un format lisible</span></li>
+                <li><strong data-i18n="privacy.rights.opposition">Droit d'opposition</strong> <span data-i18n="privacy.rights.oppositionDesc">: vous opposer au traitement de vos données</span></li>
             </ul>
             
-            <h2>8. Cookies</h2>
-            <p>Nous utilisons des cookies pour :</p>
+            <p data-i18n="privacy.rights.contact">Pour exercer ces droits, contactez-nous à : <strong>privacy@prospio.app</strong></p>
+            
+            <h2 data-i18n="privacy.security.title">7. Sécurité des données</h2>
+            <p data-i18n="privacy.security.intro">Nous mettons en œuvre des mesures de sécurité appropriées pour protéger vos données :</p>
             <ul>
-                <li>Fonctionnement technique du site</li>
-                <li>Analyse des performances et du trafic</li>
-                <li>Personnalisation de votre expérience</li>
+                <li data-i18n="privacy.security.encryption">Chiffrement des données (SSL/TLS)</li>
+                <li data-i18n="privacy.security.access">Contrôle d'accès strict aux systèmes</li>
+                <li data-i18n="privacy.security.training">Formations régulières du personnel à la protection des données</li>
+                <li data-i18n="privacy.security.audits">Audits de sécurité périodiques</li>
             </ul>
-            <p>Vous pouvez gérer vos préférences via les paramètres de votre navigateur.</p>
             
-            <h2>9. Modifications</h2>
-            <p>Nous nous réservons le droit de modifier cette politique à tout moment. Les modifications entreront en vigueur dès leur publication sur le site. Nous vous informerons des modifications significatives par email.</p>
+            <h2 data-i18n="privacy.cookies.title">8. Cookies</h2>
+            <p data-i18n="privacy.cookies.intro">Nous utilisons des cookies pour :</p>
+            <ul>
+                <li data-i18n="privacy.cookies.technical">Fonctionnement technique du site</li>
+                <li data-i18n="privacy.cookies.analytics">Analyse des performances et du trafic</li>
+                <li data-i18n="privacy.cookies.personalization">Personnalisation de votre expérience</li>
+            </ul>
+            <p data-i18n="privacy.cookies.management">Vous pouvez gérer vos préférences via les paramètres de votre navigateur.</p>
             
-            <h2>10. Contact</h2>
-            <p>Pour toute question concernant cette politique de confidentialité, contactez-nous :</p>
-            <p><strong>Email :</strong> devwithcam@outlook.com<br>
-            <strong>Adresse :</strong> 30 rue des Près Saint-Martin, 91600 Savigny-sur-Orge, France<br>
-            <strong>DPO</strong> : Cameron Adao (dpo@nexora.app)</p>
+            <h2 data-i18n="privacy.modifications.title">9. Modifications</h2>
+            <p data-i18n="privacy.modifications.intro">Nous nous réservons le droit de modifier cette politique à tout moment. Les modifications entreront en vigueur dès leur publication sur le site. Nous vous informerons des modifications significatives par email.</p>
             
-            <a href="index.html" class="back">← Retour à l'accueil</a>
+            <h2 data-i18n="privacy.contact.title">10. Contact</h2>
+            <p data-i18n="privacy.contact.intro">Pour toute question concernant cette politique de confidentialité, contactez-nous :</p>
+            <p>
+                <strong data-i18n="privacy.contact.email">Email :</strong> privacy@prospio.app<br>
+                <strong data-i18n="privacy.contact.address">Adresse :</strong> 123 Avenue des Champs-Élysées, 75008 Paris, France<br>
+                <strong data-i18n="privacy.contact.dpo">DPO</strong> : Cameron Adao (dpo@prospio.app)
+            </p>
+            
+            <a href="/" class="back" data-i18n="privacy.back">← Retour à l'accueil</a>
         </div>
         
         <footer>
-            <p>&copy; 2025 Prospio. Tous droits réservés.</p>
+            <p data-i18n="footer.copyright">© 2025 Prospio. Tous droits réservés.</p>
         </footer>
     </div>
+
+    <script>
+        // Translation System (same as index.html)
+        class I18n {
+            constructor() {
+                this.currentLang = localStorage.getItem('preferredLanguage') || 'fr';
+                this.translations = {};
+                this.init();
+            }
+
+            async init() {
+                await this.loadTranslations();
+                this.updateLanguage();
+                this.setupEventListeners();
+            }
+
+            async loadTranslations() {
+                try {
+                    const response = await fetch(`locales/${this.currentLang}.json`);
+                    this.translations = await response.json();
+                } catch (error) {
+                    console.error('Error loading translations:', error);
+                }
+            }
+
+            updateLanguage() {
+                document.documentElement.lang = this.currentLang;
+                
+                document.querySelectorAll('[data-i18n]').forEach(element => {
+                    const keys = element.getAttribute('data-i18n').split('.');
+                    const value = this.getNestedValue(this.translations, keys);
+                    
+                    if (element.tagName === 'META') {
+                        element.content = value;
+                    } else {
+                        element.innerHTML = value;
+                    }
+                });
+
+                document.getElementById('languageSelect').value = this.currentLang;
+            }
+
+            getNestedValue(obj, keys) {
+                return keys.reduce((o, i) => o?.[i], obj);
+            }
+
+            setupEventListeners() {
+                document.getElementById('languageSelect').addEventListener('change', (e) => {
+                    this.currentLang = e.target.value;
+                    localStorage.setItem('preferredLanguage', this.currentLang);
+                    this.loadTranslations().then(() => this.updateLanguage());
+                });
+            }
+        }
+
+        document.addEventListener('DOMContentLoaded', () => {
+            new I18n();
+        });
+    </script>
 </body>
 </html>

@@ -3,32 +3,49 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Prospio - Prospection IA Tout-en-un</title>
+    <title data-i18n="meta.title">Prospio - Prospection IA Tout-en-un</title>
+    <meta name="description" data-i18n="meta.description" content="Optimisez vos ventes avec notre plateforme de prospection IA tout-en-un">
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&display=swap" rel="stylesheet">
     <style>
         * { margin: 0; padding: 0; box-sizing: border-box; font-family: 'Inter', sans-serif; }
         body { background-color: #f8f9fb; color: #333; line-height: 1.6; }
-
+        
+        /* Language Selector */
+        .lang-selector {
+            position: absolute;
+            top: 1rem;
+            right: 1rem;
+            z-index: 1001;
+        }
+        .lang-selector select {
+            padding: 0.5rem 1rem;
+            border-radius: 25px;
+            border: 1px solid #ddd;
+            background: white;
+            cursor: pointer;
+            font-weight: 500;
+        }
+        
         /* Navbar */
         nav { position: sticky; top: 0; background: white; box-shadow: 0 2px 10px rgba(0,0,0,0.05); padding: 1rem 2rem; display: flex; justify-content: space-between; align-items: center; z-index: 1000; }
         nav .logo { font-size: 1.5rem; font-weight: 700; color: #4f46e5; }
         nav ul { display: flex; gap: 2rem; list-style: none; }
         nav ul li a { text-decoration: none; color: #333; font-weight: 500; transition: color 0.3s; }
         nav ul li a:hover { color: #4f46e5; }
-
+        
         /* Header */
         header { text-align: center; padding: 6rem 2rem 4rem; background: linear-gradient(135deg, #4f46e5, #6d28d9); color: white; }
         header h1 { font-size: 3rem; font-weight: 700; margin-bottom: 1rem; }
         header p { font-size: 1.25rem; opacity: 0.9; max-width: 600px; margin: auto; }
         .countdown { background: rgba(255,255,255,0.1); padding: 1rem 2rem; border-radius: 8px; margin-top: 2rem; display: inline-block; font-weight: 600; }
-
+        
         /* Hero Section */
         .hero { max-width: 1100px; margin: -3rem auto 4rem; background: white; padding: 3rem; border-radius: 15px; box-shadow: 0 10px 30px rgba(0,0,0,0.1); text-align: center; }
         .hero h2 { font-size: 2.25rem; color: #4f46e5; margin-bottom: 1rem; }
         .hero p { font-size: 1.1rem; margin-bottom: 2rem; color: #555; }
         .cta-button { display: inline-block; background: linear-gradient(45deg, #ef4444, #f97316); color: white; padding: 1rem 2rem; border-radius: 50px; font-weight: 600; text-decoration: none; transition: all 0.3s; }
         .cta-button:hover { transform: translateY(-2px); box-shadow: 0 8px 25px rgba(239,68,68,0.4); }
-
+        
         /* Features */
         .section-title { text-align: center; font-size: 2rem; margin-bottom: 2rem; color: #111; }
         .features { display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 2rem; max-width: 1100px; margin: auto; }
@@ -36,7 +53,7 @@
         .feature:hover { transform: translateY(-5px); box-shadow: 0 8px 20px rgba(0,0,0,0.08); }
         .feature-icon { font-size: 2.5rem; margin-bottom: 1rem; }
         .feature h3 { color: #4f46e5; margin-bottom: 0.5rem; }
-
+        
         /* Form Section */
         .email-form { max-width: 700px; margin: 4rem auto; background: white; padding: 3rem; border-radius: 12px; box-shadow: 0 10px 30px rgba(0,0,0,0.1); text-align: center; }
         .email-form h3 { font-size: 1.8rem; margin-bottom: 1rem; color: #4f46e5; }
@@ -44,7 +61,7 @@
         .form-group input { flex: 1; padding: 1rem; border: none; font-size: 1rem; }
         .form-group button { background: #4f46e5; color: white; border: none; padding: 1rem 2rem; cursor: pointer; font-weight: 600; transition: background 0.3s; }
         .form-group button:hover { background: #4338ca; }
-
+        
         /* Footer */
         footer { background: #1f2937; color: white; padding: 2rem; text-align: center; font-size: 0.9rem; margin-top: 3rem; }
         footer a { color: #93c5fd; text-decoration: none; }
@@ -52,108 +69,181 @@
     </style>
 </head>
 <body>
+    <!-- Language Selector -->
+    <div class="lang-selector">
+        <select id="languageSelect">
+            <option value="fr">🇫🇷 Français</option>
+            <option value="en">🇬🇧 English</option>
+            <option value="es">🇪🇸 Español</option>
+            <option value="de">🇩🇪 Deutsch</option>
+        </select>
+    </div>
 
     <!-- Navbar -->
     <nav>
-        <div class="logo">Prospio</div>
+        <div class="logo" data-i18n="nav.logo">Prospio</div>
         <ul>
-            <li><a href="#features">Fonctionnalités</a></li>
-            <li><a href="#pricing">Tarifs</a></li>
-            <li><a href="#contact">Contact</a></li>
+            <li><a href="#features" data-i18n="nav.features">Fonctionnalités</a></li>
+            <li><a href="#pricing" data-i18n="nav.pricing">Tarifs</a></li>
+            <li><a href="#contact" data-i18n="nav.contact">Contact</a></li>
         </ul>
     </nav>
-
+    
     <!-- Header -->
     <header>
-        <h1>La prospection IA tout-en-un</h1>
-        <p>Optimisez vos ventes avec une plateforme intégrant scraping, emailing IA, CRM et automatisation multi-canal.</p>
-        <div class="countdown">Lancement dans : <span id="days">15</span>j <span id="hours">08</span>h <span id="minutes">32</span>m <span id="seconds">00</span>s</div>
+        <h1 data-i18n="header.title">La prospection IA tout-en-un</h1>
+        <p data-i18n="header.subtitle">Optimisez vos ventes avec une plateforme intégrant scraping, emailing IA, CRM et automatisation multi-canal.</p>
+        <div class="countdown" data-i18n="header.countdown">Lancement dans : <span id="days">15</span><span data-i18n="countdown.days">j</span> <span id="hours">08</span><span data-i18n="countdown.hours">h</span> <span id="minutes">32</span><span data-i18n="countdown.minutes">m</span> <span id="seconds">00</span><span data-i18n="countdown.seconds">s</span></div>
     </header>
-
+    
     <!-- Hero -->
     <section class="hero">
-        <h2>Révolutionnez votre prospection digitale</h2>
-        <p>Scraping multi-sources, CRM intégré, agents IA et automatisations avancées : tout est pensé pour maximiser votre taux de conversion.</p>
-        <a href="#pricing" class="cta-button">Profiter de l'offre de lancement</a>
+        <h2 data-i18n="hero.title">Révolutionnez votre prospection digitale</h2>
+        <p data-i18n="hero.subtitle">Scraping multi-sources, CRM intégré, agents IA et automatisations avancées : tout est pensé pour maximiser votre taux de conversion.</p>
+        <a href="#pricing" class="cta-button" data-i18n="hero.cta">Profiter de l'offre de lancement</a>
     </section>
-
+    
     <!-- Features -->
-    <h2 class="section-title" id="features">Fonctionnalités clés</h2>
+    <h2 class="section-title" data-i18n="features.title">Fonctionnalités clés</h2>
     <section class="features">
         <div class="feature">
             <div class="feature-icon">🔍</div>
-            <h3>Scraping Intelligent</h3>
-            <p>Extraction ciblée depuis LinkedIn, Google Maps, Apollo.io et plus encore.</p>
+            <h3 data-i18n="features.scraping.title">Scraping Intelligent</h3>
+            <p data-i18n="features.scraping.desc">Extraction ciblée depuis LinkedIn, Google Maps, Apollo.io et plus encore.</p>
         </div>
         <div class="feature">
             <div class="feature-icon">🤖</div>
-            <h3>Emailing IA</h3>
-            <p>Rédaction persuasive avec ChatGPT, Grok ou Copilot.</p>
+            <h3 data-i18n="features.emailing.title">Emailing IA</h3>
+            <p data-i18n="features.emailing.desc">Rédaction persuasive avec ChatGPT, Grok ou Copilot.</p>
         </div>
         <div class="feature">
             <div class="feature-icon">📞</div>
-            <h3>Multi-Canal</h3>
-            <p>Campagnes automatisées sur LinkedIn, WhatsApp, Email et Téléphone.</p>
+            <h3 data-i18n="features.multicanal.title">Multi-Canal</h3>
+            <p data-i18n="features.multicanal.desc">Campagnes automatisées sur LinkedIn, WhatsApp, Email et Téléphone.</p>
         </div>
         <div class="feature">
             <div class="feature-icon">📊</div>
-            <h3>CRM Intégré</h3>
-            <p>Pipeline visuel, scoring IA et synchronisation HubSpot/Salesforce.</p>
+            <h3 data-i18n="features.crm.title">CRM Intégré</h3>
+            <p data-i18n="features.crm.desc">Pipeline visuel, scoring IA et synchronisation HubSpot/Salesforce.</p>
         </div>
         <div class="feature">
             <div class="feature-icon">📱</div>
-            <h3>Application Mobile</h3>
-            <p>Gérez vos leads où que vous soyez, même hors ligne.</p>
+            <h3 data-i18n="features.mobile.title">Application Mobile</h3>
+            <p data-i18n="features.mobile.desc">Gérez vos leads où que vous soyez, même hors ligne.</p>
         </div>
         <div class="feature">
             <div class="feature-icon">⚡</div>
-            <h3>Agents IA</h3>
-            <p>Chatbots 24/7 sur votre site, WhatsApp et LinkedIn.</p>
+            <h3 data-i18n="features.agents.title">Agents IA</h3>
+            <p data-i18n="features.agents.desc">Chatbots 24/7 sur votre site, WhatsApp et LinkedIn.</p>
         </div>
     </section>
-
+    
     <!-- Form -->
     <section class="email-form" id="pricing">
-        <h3>Offre Spéciale Lancement</h3>
-        <p>Les 30 premiers clients bénéficient de <strong>-50% à vie</strong> !</p>
+        <h3 data-i18n="form.title">Offre Spéciale Lancement</h3>
+        <p data-i18n="form.subtitle">Les 30 premiers clients bénéficient de <strong>-50% à vie</strong> !</p>
         <form class="form-group" id="email-form">
-            <input type="email" placeholder="Votre email professionnel" required>
-            <button type="submit">M'inscrire</button>
+            <input type="email" data-i18n-placeholder="form.placeholder" placeholder="Votre email professionnel" required>
+            <button type="submit" data-i18n="form.button">M'inscrire</button>
         </form>
-        <p style="margin-top: 1rem; opacity: 0.8;">Accès anticipé + bonus exclusif</p>
+        <p style="margin-top: 1rem; opacity: 0.8;" data-i18n="form.bonus">Accès anticipé + bonus exclusif</p>
     </section>
-
+    
     <!-- Footer -->
     <footer id="contact">
-        <p>&copy; 2025 Prospio. Tous droits réservés. | <a href="mentions-legales.html">Mentions légales</a> | <a href="politique-confidentialite.html">Politique de confidentialité</a></p>
+        <p><span data-i18n="footer.copyright">© 2025 Prospio. Tous droits réservés.</span> | <a href="mentions-legales.html" data-i18n="footer.legal">Mentions légales</a> | <a href="politique-confidentialite.html" data-i18n="footer.privacy">Politique de confidentialité</a></p>
     </footer>
 
     <script>
-        // Countdown
+        // Translation System
+        class I18n {
+            constructor() {
+                this.currentLang = localStorage.getItem('preferredLanguage') || 'fr';
+                this.translations = {};
+                this.init();
+            }
+
+            async init() {
+                await this.loadTranslations();
+                this.updateLanguage();
+                this.setupEventListeners();
+            }
+
+            async loadTranslations() {
+                try {
+                    const response = await fetch(`locales/${this.currentLang}.json`);
+                    this.translations = await response.json();
+                } catch (error) {
+                    console.error('Error loading translations:', error);
+                }
+            }
+
+            updateLanguage() {
+                // Update HTML lang attribute
+                document.documentElement.lang = this.currentLang;
+                
+                // Update all elements with data-i18n attribute
+                document.querySelectorAll('[data-i18n]').forEach(element => {
+                    const keys = element.getAttribute('data-i18n').split('.');
+                    const value = this.getNestedValue(this.translations, keys);
+                    
+                    if (element.tagName === 'META') {
+                        element.content = value;
+                    } else if (element.tagName === 'INPUT' && element.hasAttribute('data-i18n-placeholder')) {
+                        element.placeholder = value;
+                    } else {
+                        element.textContent = value;
+                    }
+                });
+
+                // Update language selector
+                document.getElementById('languageSelect').value = this.currentLang;
+            }
+
+            getNestedValue(obj, keys) {
+                return keys.reduce((o, i) => o?.[i], obj);
+            }
+
+            setupEventListeners() {
+                document.getElementById('languageSelect').addEventListener('change', (e) => {
+                    this.currentLang = e.target.value;
+                    localStorage.setItem('preferredLanguage', this.currentLang);
+                    this.loadTranslations().then(() => this.updateLanguage());
+                });
+            }
+        }
+
+        // Initialize I18n when DOM is loaded
+        document.addEventListener('DOMContentLoaded', () => {
+            new I18n();
+        });
+
+        // Countdown Timer
         function updateCountdown() {
             const launchDate = new Date();
             launchDate.setDate(launchDate.getDate() + 15);
             launchDate.setHours(launchDate.getHours() + 8);
             launchDate.setMinutes(launchDate.getMinutes() + 32);
             launchDate.setSeconds(0);
-
+            
             const now = new Date().getTime();
             const distance = launchDate - now;
-
+            
             const days = Math.floor(distance / (1000 * 60 * 60 * 24));
             const hours = Math.floor((distance % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
             const minutes = Math.floor((distance % (1000 * 60 * 60)) / (1000 * 60));
             const seconds = Math.floor((distance % (1000 * 60)) / 1000);
-
+            
             document.getElementById("days").innerText = days.toString().padStart(2, '0');
             document.getElementById("hours").innerText = hours.toString().padStart(2, '0');
             document.getElementById("minutes").innerText = minutes.toString().padStart(2, '0');
             document.getElementById("seconds").innerText = seconds.toString().padStart(2, '0');
         }
+        
         setInterval(updateCountdown, 1000);
         updateCountdown();
 
-        // Form
+        // Form Submission
         document.getElementById('email-form').addEventListener('submit', function(e) {
             e.preventDefault();
             const email = e.target.querySelector('input[type="email"]').value;

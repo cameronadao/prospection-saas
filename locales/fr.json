@@ -1,0 +1,63 @@
+{
+    "nav": {
+      "logo": "Prospio",
+      "features": "Fonctionnalités",
+      "pricing": "Tarifs",
+      "contact": "Contact"
+    },
+    "header": {
+      "title": "La prospection IA tout-en-un",
+      "subtitle": "Optimisez vos ventes avec une plateforme intégrant scraping, emailing IA, CRM et automatisation multi-canal.",
+      "countdown": "Lancement dans :"
+    },
+    "hero": {
+      "title": "Révolutionnez votre prospection digitale",
+      "subtitle": "Scraping multi-sources, CRM intégré, agents IA et automatisations avancées : tout est pensé pour maximiser votre taux de conversion.",
+      "cta": "Profiter de l'offre de lancement"
+    },
+    "features": {
+      "title": "Fonctionnalités clés",
+      "scraping": {
+        "title": "Scraping Intelligent",
+        "desc": "Extraction ciblée depuis LinkedIn, Google Maps, Apollo.io et plus encore."
+      },
+      "emailing": {
+        "title": "Emailing IA",
+        "desc": "Rédaction persuasive avec ChatGPT, Grok ou Copilot."
+      },
+      "multicanal": {
+        "title": "Multi-Canal",
+        "desc": "Campagnes automatisées sur LinkedIn, WhatsApp, Email et Téléphone."
+      },
+      "crm": {
+        "title": "CRM Intégré",
+        "desc": "Pipeline visuel, scoring IA et synchronisation HubSpot/Salesforce."
+      },
+      "mobile": {
+        "title": "Application Mobile",
+        "desc": "Gérez vos leads où que vous soyez, même hors ligne."
+      },
+      "agents": {
+        "title": "Agents IA",
+        "desc": "Chatbots 24/7 sur votre site, WhatsApp et LinkedIn."
+      }
+    },
+    "form": {
+      "title": "Offre Spéciale Lancement",
+      "subtitle": "Les 30 premiers clients bénéficient de -50% à vie !",
+      "placeholder": "Votre email professionnel",
+      "button": "M'inscrire",
+      "bonus": "Accès anticipé + bonus exclusif"
+    },
+    "footer": {
+      "copyright": "© 2025 Prospio. Tous droits réservés.",
+      "legal": "Mentions légales",
+      "privacy": "Politique de confidentialité"
+    },
+    "countdown": {
+      "days": "j",
+      "hours": "h",
+      "minutes": "m",
+      "seconds": "s"
+    }
+  }
