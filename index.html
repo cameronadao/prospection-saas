@@ -1,0 +1,165 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Nexora - Prospection IA Tout-en-un</title>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&display=swap" rel="stylesheet">
+    <style>
+        * { margin: 0; padding: 0; box-sizing: border-box; font-family: 'Inter', sans-serif; }
+        body { background-color: #f8f9fb; color: #333; line-height: 1.6; }
+
+        /* Navbar */
+        nav { position: sticky; top: 0; background: white; box-shadow: 0 2px 10px rgba(0,0,0,0.05); padding: 1rem 2rem; display: flex; justify-content: space-between; align-items: center; z-index: 1000; }
+        nav .logo { font-size: 1.5rem; font-weight: 700; color: #4f46e5; }
+        nav ul { display: flex; gap: 2rem; list-style: none; }
+        nav ul li a { text-decoration: none; color: #333; font-weight: 500; transition: color 0.3s; }
+        nav ul li a:hover { color: #4f46e5; }
+
+        /* Header */
+        header { text-align: center; padding: 6rem 2rem 4rem; background: linear-gradient(135deg, #4f46e5, #6d28d9); color: white; }
+        header h1 { font-size: 3rem; font-weight: 700; margin-bottom: 1rem; }
+        header p { font-size: 1.25rem; opacity: 0.9; max-width: 600px; margin: auto; }
+        .countdown { background: rgba(255,255,255,0.1); padding: 1rem 2rem; border-radius: 8px; margin-top: 2rem; display: inline-block; font-weight: 600; }
+
+        /* Hero Section */
+        .hero { max-width: 1100px; margin: -3rem auto 4rem; background: white; padding: 3rem; border-radius: 15px; box-shadow: 0 10px 30px rgba(0,0,0,0.1); text-align: center; }
+        .hero h2 { font-size: 2.25rem; color: #4f46e5; margin-bottom: 1rem; }
+        .hero p { font-size: 1.1rem; margin-bottom: 2rem; color: #555; }
+        .cta-button { display: inline-block; background: linear-gradient(45deg, #ef4444, #f97316); color: white; padding: 1rem 2rem; border-radius: 50px; font-weight: 600; text-decoration: none; transition: all 0.3s; }
+        .cta-button:hover { transform: translateY(-2px); box-shadow: 0 8px 25px rgba(239,68,68,0.4); }
+
+        /* Features */
+        .section-title { text-align: center; font-size: 2rem; margin-bottom: 2rem; color: #111; }
+        .features { display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 2rem; max-width: 1100px; margin: auto; }
+        .feature { background: white; border-radius: 12px; padding: 2rem; text-align: center; box-shadow: 0 4px 15px rgba(0,0,0,0.05); transition: all 0.3s; }
+        .feature:hover { transform: translateY(-5px); box-shadow: 0 8px 20px rgba(0,0,0,0.08); }
+        .feature-icon { font-size: 2.5rem; margin-bottom: 1rem; }
+        .feature h3 { color: #4f46e5; margin-bottom: 0.5rem; }
+
+        /* Form Section */
+        .email-form { max-width: 700px; margin: 4rem auto; background: white; padding: 3rem; border-radius: 12px; box-shadow: 0 10px 30px rgba(0,0,0,0.1); text-align: center; }
+        .email-form h3 { font-size: 1.8rem; margin-bottom: 1rem; color: #4f46e5; }
+        .form-group { display: flex; border: 2px solid #ddd; border-radius: 50px; overflow: hidden; }
+        .form-group input { flex: 1; padding: 1rem; border: none; font-size: 1rem; }
+        .form-group button { background: #4f46e5; color: white; border: none; padding: 1rem 2rem; cursor: pointer; font-weight: 600; transition: background 0.3s; }
+        .form-group button:hover { background: #4338ca; }
+
+        /* Footer */
+        footer { background: #1f2937; color: white; padding: 2rem; text-align: center; font-size: 0.9rem; margin-top: 3rem; }
+        footer a { color: #93c5fd; text-decoration: none; }
+        footer a:hover { text-decoration: underline; }
+    </style>
+</head>
+<body>
+
+    <!-- Navbar -->
+    <nav>
+        <div class="logo">Nexora</div>
+        <ul>
+            <li><a href="#features">Fonctionnalités</a></li>
+            <li><a href="#pricing">Tarifs</a></li>
+            <li><a href="#contact">Contact</a></li>
+        </ul>
+    </nav>
+
+    <!-- Header -->
+    <header>
+        <h1>La prospection IA tout-en-un</h1>
+        <p>Optimisez vos ventes avec une plateforme intégrant scraping, emailing IA, CRM et automatisation multi-canal.</p>
+        <div class="countdown">Lancement dans : <span id="days">15</span>j <span id="hours">08</span>h <span id="minutes">32</span>m <span id="seconds">00</span>s</div>
+    </header>
+
+    <!-- Hero -->
+    <section class="hero">
+        <h2>Révolutionnez votre prospection digitale</h2>
+        <p>Scraping multi-sources, CRM intégré, agents IA et automatisations avancées : tout est pensé pour maximiser votre taux de conversion.</p>
+        <a href="#pricing" class="cta-button">Profiter de l'offre de lancement</a>
+    </section>
+
+    <!-- Features -->
+    <h2 class="section-title" id="features">Fonctionnalités clés</h2>
+    <section class="features">
+        <div class="feature">
+            <div class="feature-icon">🔍</div>
+            <h3>Scraping Intelligent</h3>
+            <p>Extraction ciblée depuis LinkedIn, Google Maps, Apollo.io et plus encore.</p>
+        </div>
+        <div class="feature">
+            <div class="feature-icon">🤖</div>
+            <h3>Emailing IA</h3>
+            <p>Rédaction persuasive avec ChatGPT, Grok ou Copilot.</p>
+        </div>
+        <div class="feature">
+            <div class="feature-icon">📞</div>
+            <h3>Multi-Canal</h3>
+            <p>Campagnes automatisées sur LinkedIn, WhatsApp, Email et Téléphone.</p>
+        </div>
+        <div class="feature">
+            <div class="feature-icon">📊</div>
+            <h3>CRM Intégré</h3>
+            <p>Pipeline visuel, scoring IA et synchronisation HubSpot/Salesforce.</p>
+        </div>
+        <div class="feature">
+            <div class="feature-icon">📱</div>
+            <h3>Application Mobile</h3>
+            <p>Gérez vos leads où que vous soyez, même hors ligne.</p>
+        </div>
+        <div class="feature">
+            <div class="feature-icon">⚡</div>
+            <h3>Agents IA</h3>
+            <p>Chatbots 24/7 sur votre site, WhatsApp et LinkedIn.</p>
+        </div>
+    </section>
+
+    <!-- Form -->
+    <section class="email-form" id="pricing">
+        <h3>Offre Spéciale Lancement</h3>
+        <p>Les 30 premiers clients bénéficient de <strong>-50% à vie</strong> !</p>
+        <form class="form-group" id="email-form">
+            <input type="email" placeholder="Votre email professionnel" required>
+            <button type="submit">M'inscrire</button>
+        </form>
+        <p style="margin-top: 1rem; opacity: 0.8;">Accès anticipé + bonus exclusif</p>
+    </section>
+
+    <!-- Footer -->
+    <footer id="contact">
+        <p>&copy; 2025 Nexora. Tous droits réservés. | <a href="#">Mentions légales</a> | <a href="#">Politique de confidentialité</a></p>
+    </footer>
+
+    <script>
+        // Countdown
+        function updateCountdown() {
+            const launchDate = new Date();
+            launchDate.setDate(launchDate.getDate() + 15);
+            launchDate.setHours(launchDate.getHours() + 8);
+            launchDate.setMinutes(launchDate.getMinutes() + 32);
+            launchDate.setSeconds(0);
+
+            const now = new Date().getTime();
+            const distance = launchDate - now;
+
+            const days = Math.floor(distance / (1000 * 60 * 60 * 24));
+            const hours = Math.floor((distance % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
+            const minutes = Math.floor((distance % (1000 * 60 * 60)) / (1000 * 60));
+            const seconds = Math.floor((distance % (1000 * 60)) / 1000);
+
+            document.getElementById("days").innerText = days.toString().padStart(2, '0');
+            document.getElementById("hours").innerText = hours.toString().padStart(2, '0');
+            document.getElementById("minutes").innerText = minutes.toString().padStart(2, '0');
+            document.getElementById("seconds").innerText = seconds.toString().padStart(2, '0');
+        }
+        setInterval(updateCountdown, 1000);
+        updateCountdown();
+
+        // Form
+        document.getElementById('email-form').addEventListener('submit', function(e) {
+            e.preventDefault();
+            const email = e.target.querySelector('input[type="email"]').value;
+            alert(`Merci ${email} ! Vous serez notifié du lancement et bénéficierez de l'offre exclusive.`);
+            e.target.reset();
+        });
+    </script>
+</body>
+</html>
