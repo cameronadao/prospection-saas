@@ -30,5 +30,5 @@ app.get('/api', (req, res) => {
 // Démarrer le serveur
 app.listen(PORT, () => {
   console.log(`🚀 Serveur démarré sur http://localhost:${PORT}`);
-  console.log(`📄 Page Nexora : http://localhost:${PORT}`);
+  console.log(`📄 Page Prospio : http://localhost:${PORT}`);
 });
