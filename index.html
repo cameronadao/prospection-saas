@@ -469,8 +469,8 @@
     <header>
         <h1 data-i18n="header.title">La prospection IA tout-en-un</h1>
         <p data-i18n="header.subtitle">Optimisez vos ventes avec une plateforme intégrant scraping, emailing IA, CRM et automatisation multi-canal.</p>
-        <div class="countdown" data-i18n="header.countdown">
-            Lancement dans : 
+        <div class="countdown">
+            <span data-i18n="header.countdown">Lancement dans :</span> 
             <span id="days">15</span><span data-i18n="countdown.days">j</span> 
             <span id="hours">08</span><span data-i18n="countdown.hours">h</span> 
             <span id="minutes">32</span><span data-i18n="countdown.minutes">m</span> 
@@ -557,7 +557,7 @@
                 navMenu.classList.remove('active');
             });
         });
-
+    
         // Translation System
         class I18n {
             constructor() {
@@ -565,23 +565,23 @@
                 this.translations = {};
                 this.init();
             }
-
+    
             detectLanguage() {
                 const storedLang = localStorage.getItem('preferredLanguage');
                 if (storedLang) return storedLang;
-
+    
                 const browserLang = navigator.language || navigator.userLanguage;
                 const shortLang = browserLang.split('-')[0];
                 const supportedLangs = ['en', 'fr', 'es', 'de'];
                 return supportedLangs.includes(shortLang) ? shortLang : 'en';
             }
-
+    
             async init() {
                 await this.loadTranslations();
                 this.updateLanguage();
                 this.setupEventListeners();
             }
-
+    
             async loadTranslations() {
                 try {
                     const timestamp = new Date().getTime();
@@ -596,7 +596,7 @@
                     }
                 }
             }
-
+    
             updateLanguage() {
                 document.documentElement.lang = this.currentLang;
                 
@@ -612,15 +612,15 @@
                         element.textContent = value;
                     }
                 });
-
+    
                 const selector = document.getElementById('languageSelect');
                 if (selector) selector.value = this.currentLang;
             }
-
+    
             getNestedValue(obj, keys) {
                 return keys.reduce((o, i) => o?.[i], obj);
             }
-
+    
             setupEventListeners() {
                 const selector = document.getElementById('languageSelect');
                 if (selector) {
@@ -632,48 +632,56 @@
                 }
             }
         }
-
+    
         // Initialize I18n
         document.addEventListener('DOMContentLoaded', () => {
             new I18n();
         });
-
-        // Countdown Timer
-        function updateCountdown() {
-            const launchDate = new Date();
-            launchDate.setDate(launchDate.getDate() + 15);
-            launchDate.setHours(launchDate.getHours() + 8);
-            launchDate.setMinutes(launchDate.getMinutes() + 32);
-            launchDate.setSeconds(0);
+    
+        // Countdown Timer - exécuté après I18n
+        document.addEventListener('DOMContentLoaded', () => {
+            function updateCountdown() {
+                const launchDate = new Date();
+                launchDate.setDate(launchDate.getDate() + 15);
+                launchDate.setHours(launchDate.getHours() + 8);
+                launchDate.setMinutes(launchDate.getMinutes() + 32);
+                launchDate.setSeconds(0);
+                
+                const now = new Date().getTime();
+                const distance = launchDate - now;
+                
+                const days = Math.floor(distance / (1000 * 60 * 60 * 24));
+                const hours = Math.floor((distance % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
+                const minutes = Math.floor((distance % (1000 * 60 * 60)) / (1000 * 60));
+                const seconds = Math.floor((distance % (1000 * 60)) / 1000);
+                
+                // Vérifier que les éléments existent avant de les mettre à jour
+                const daysEl = document.getElementById("days");
+                const hoursEl = document.getElementById("hours");
+                const minutesEl = document.getElementById("minutes");
+                const secondsEl = document.getElementById("seconds");
+                
+                if (daysEl) daysEl.innerText = days.toString().padStart(2, '0');
+                if (hoursEl) hoursEl.innerText = hours.toString().padStart(2, '0');
+                if (minutesEl) minutesEl.innerText = minutes.toString().padStart(2, '0');
+                if (secondsEl) secondsEl.innerText = seconds.toString().padStart(2, '0');
+            }
             
-            const now = new Date().getTime();
-            const distance = launchDate - now;
-            
-            const days = Math.floor(distance / (1000 * 60 * 60 * 24));
-            const hours = Math.floor((distance % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
-            const minutes = Math.floor((distance % (1000 * 60 * 60)) / (1000 * 60));
-            const seconds = Math.floor((distance % (1000 * 60)) / 1000);
-            
-            const daysEl = document.getElementById("days");
-            const hoursEl = document.getElementById("hours");
-            const minutesEl = document.getElementById("minutes");
-            const secondsEl = document.getElementById("seconds");
-            
-            if (daysEl) daysEl.innerText = days.toString().padStart(2, '0');
-            if (hoursEl) hoursEl.innerText = hours.toString().padStart(2, '0');
-            if (minutesEl) minutesEl.innerText = minutes.toString().padStart(2, '0');
-            if (secondsEl) secondsEl.innerText = seconds.toString().padStart(2, '0');
-        }
-        
-        setInterval(updateCountdown, 1000);
-        updateCountdown();
-
+            setInterval(updateCountdown, 1000);
+            updateCountdown();
+        });
+    
         // Form Submission
-        document.getElementById('email-form').addEventListener('submit', function(e) {
-            e.preventDefault();
-            const email = e.target.querySelector('input[type="email"]').value;
-            alert(`Merci ${email} ! Vous serez notifié du lancement et bénéficierez de l'offre exclusive.`);
-            e.target.reset();
+        document.addEventListener('DOMContentLoaded', () => {
+            const form = document.getElementById('email-form');
+            if (form) {
+                form.addEventListener('submit', function(e) {
+                    e.preventDefault();
+                    const email = e.target.querySelector('input[type="email"]').value;
+                    alert(`Merci ${email} ! Vous serez notifié du lancement et bénéficierez de l'offre exclusive.`);
+                    e.target.reset();
+                });
+            }
         });
     </script>
 </body>
