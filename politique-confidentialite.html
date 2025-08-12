@@ -60,6 +60,16 @@
             color: #4f46e5; 
         }
         
+        /* Mobile Menu Button */
+        .mobile-menu-btn {
+            display: none;
+            background: none;
+            border: none;
+            font-size: 1.5rem;
+            color: #4f46e5;
+            cursor: pointer;
+        }
+        
         .container { 
             max-width: 800px; 
             margin: 0 auto; 
@@ -77,7 +87,7 @@
         .last-update { 
             color: #666; 
             font-style: italic; 
-            margin-bottom: 2remrem; 
+            margin-bottom: 2rem; 
         }
         .content { 
             background: white; 
@@ -159,25 +169,149 @@
         
         /* Responsive */
         @media (max-width: 768px) {
+            .lang-selector {
+                top: 0.8rem;
+                right: 0.8rem;
+            }
+            .lang-selector select {
+                padding: 0.4rem 0.8rem;
+                font-size: 0.9rem;
+            }
+            
             nav {
-                flex-direction: column;
-                gap: 1rem;
+                flex-direction: row;
+                justify-content: space-between;
                 padding: 1rem;
             }
-            nav ul {
-                gap: 1rem;
+            
+            .mobile-menu-btn {
+                display: block;
             }
+            
+            nav ul {
+                position: fixed;
+                top: 70px;
+                left: 0;
+                width: 100%;
+                background: white;
+                flex-direction: column;
+                padding: 1.5rem;
+                box-shadow: 0 4px 10px rgba(0,0,0,0.1);
+                transform: translateY(-150%);
+                opacity: 0;
+                transition: all 0.3s ease;
+                z-index: 999;
+            }
+            
+            nav ul.active {
+                transform: translateY(0);
+                opacity: 1;
+            }
+            
+            nav ul li {
+                width: 100%;
+                padding: 0.5rem 0;
+                border-bottom: 1px solid #eee;
+            }
+            
+            nav ul li:last-child {
+                border-bottom: none;
+            }
+            
+            nav ul li a {
+                display: block;
+                width: 100%;
+            }
+            
             .container {
                 padding: 1rem;
             }
-            .content {
-                padding: 2rem 1.5rem;
+            
+            header {
+                padding: 2rem 0 1.5rem;
             }
+            
             h1 {
                 font-size: 2rem;
             }
+            
+            .content {
+                padding: 1.5rem;
+            }
+            
+            h2 {
+                font-size: 1.3rem;
+                margin: 1.5rem 0 0.8rem;
+            }
+            
+            p {
+                font-size: 0.95rem;
+                margin-bottom: 0.8rem;
+            }
+            
             ul {
-                margin-left: 1rem;
+                margin-left: 1.2rem;
+                margin-bottom: 0.8rem;
+            }
+            
+            li {
+                font-size: 0.95rem;
+                margin-bottom: 0.4rem;
+            }
+            
+            .info-card {
+                padding: 1.2rem;
+                margin: 1.2rem 0;
+            }
+            
+            .back {
+                padding: 0.7rem 1.2rem;
+                font-size: 0.95rem;
+            }
+            
+            footer {
+                padding: 1.5rem;
+                font-size: 0.85rem;
+            }
+            
+            footer p {
+                line-height: 1.6;
+            }
+        }
+        
+        @media (max-width: 480px) {
+            nav .logo {
+                font-size: 1.3rem;
+            }
+            
+            .lang-selector select {
+                padding: 0.3rem 0.6rem;
+                font-size: 0.85rem;
+            }
+            
+            h1 {
+                font-size: 1.8rem;
+            }
+            
+            .content {
+                padding: 1.2rem;
+            }
+            
+            h2 {
+                font-size: 1.2rem;
+            }
+            
+            p, li {
+                font-size: 0.9rem;
+            }
+            
+            .info-card {
+                padding: 1rem;
+            }
+            
+            .back {
+                padding: 0.6rem 1rem;
+                font-size: 0.9rem;
             }
         }
     </style>
@@ -192,17 +326,20 @@
             <option value="de">🇩🇪 Deutsch</option>
         </select>
     </div>
-
+    
     <!-- Navbar -->
     <nav>
         <a href="index.html" class="logo" data-i18n="nav.logo">Prospio</a>
-        <ul>
+        <button class="mobile-menu-btn" id="mobileMenuBtn">
+            <i class="fas fa-bars"></i>
+        </button>
+        <ul id="navMenu">
             <li><a href="index.html" data-i18n="nav.home">Accueil</a></li>
             <li><a href="mentions-legales.html" data-i18n="nav.legal">Mentions légales</a></li>
             <li><a href="politique-confidentialite.html" data-i18n="nav.privacy">Politique de confidentialité</a></li>
         </ul>
     </nav>
-
+    
     <div class="container">
         <header>
             <h1 data-i18n="privacy.title">Politique de confidentialité</h1>
@@ -317,83 +454,107 @@
             <a href="politique-confidentialite.html" data-i18n="footer.privacy">Politique de confidentialité</a>
         </p>
     </footer>
-
+    
     <script>
-        class I18n {
-            constructor() {
-                this.currentLang = this.detectLanguage();
-                this.translations = {};
-                this.init();
-            }
-
-            detectLanguage() {
-                const storedLang = localStorage.getItem('preferredLanguage');
-                if (storedLang) return storedLang;
-
-                const browserLang = navigator.language || navigator.userLanguage;
-                const shortLang = browserLang.split('-')[0];
-                const supportedLangs = ['en', 'fr', 'es', 'de'];
-                return supportedLangs.includes(shortLang) ? shortLang : 'en';
-            }
-
-            async init() {
-                await this.loadTranslations();
-                this.updateLanguage();
-                this.setupEventListeners();
-            }
-
-            async loadTranslations() {
-                try {
-                    const timestamp = new Date().getTime();
-                    const response = await fetch(`locales/${this.currentLang}.json?_=${timestamp}`);
-                    if (!response.ok) throw new Error(`HTTP ${response.status}`);
-                    this.translations = await response.json();
-                } catch (error) {
-                    console.error('Error loading translations:', error);
-                    if (this.currentLang !== 'en') {
-                        this.currentLang = 'en';
-                        await this.loadTranslations();
-                    }
-                }
-            }
-
-            updateLanguage() {
-                document.documentElement.lang = this.currentLang;
-                
-                document.querySelectorAll('[data-i18n]').forEach(element => {
-                    const keys = element.getAttribute('data-i18n').split('.');
-                    const value = this.getNestedValue(this.translations, keys);
+        // Mobile menu toggle
+        document.addEventListener('DOMContentLoaded', function() {
+            const mobileMenuBtn = document.getElementById('mobileMenuBtn');
+            const navMenu = document.getElementById('navMenu');
+            
+            if (mobileMenuBtn && navMenu) {
+                mobileMenuBtn.addEventListener('click', function() {
+                    navMenu.classList.toggle('active');
                     
-                    if (element.tagName === 'META') {
-                        element.content = value;
-                    } else if (element.tagName === 'INPUT' && element.hasAttribute('data-i18n-placeholder')) {
-                        element.placeholder = value;
+                    // Change icon
+                    const icon = mobileMenuBtn.querySelector('i');
+                    if (icon.classList.contains('fa-bars')) {
+                        icon.classList.remove('fa-bars');
+                        icon.classList.add('fa-times');
                     } else {
-                        element.innerHTML = value;
+                        icon.classList.remove('fa-times');
+                        icon.classList.add('fa-bars');
                     }
                 });
-
-                const selector = document.getElementById('languageSelect');
-                if (selector) selector.value = this.currentLang;
-            }
-
-            getNestedValue(obj, keys) {
-                return keys.reduce((o, i) => o?.[i], obj);
-            }
-
-            setupEventListeners() {
-                const selector = document.getElementById('languageSelect');
-                if (selector) {
-                    selector.addEventListener('change', (e) => {
-                        this.currentLang = e.target.value;
-                        localStorage.setItem('preferredLanguage', this.currentLang);
-                        this.loadTranslations().then(() => this.updateLanguage());
+                
+                // Close menu when clicking on a link
+                const navLinks = navMenu.querySelectorAll('a');
+                navLinks.forEach(link => {
+                    link.addEventListener('click', () => {
+                        navMenu.classList.remove('active');
+                        const icon = mobileMenuBtn.querySelector('i');
+                        icon.classList.remove('fa-times');
+                        icon.classList.add('fa-bars');
                     });
+                });
+            }
+            
+            // I18n class
+            class I18n {
+                constructor() {
+                    this.currentLang = this.detectLanguage();
+                    this.translations = {};
+                    this.init();
+                }
+                detectLanguage() {
+                    const storedLang = localStorage.getItem('preferredLanguage');
+                    if (storedLang) return storedLang;
+                    const browserLang = navigator.language || navigator.userLanguage;
+                    const shortLang = browserLang.split('-')[0];
+                    const supportedLangs = ['en', 'fr', 'es', 'de'];
+                    return supportedLangs.includes(shortLang) ? shortLang : 'en';
+                }
+                async init() {
+                    await this.loadTranslations();
+                    this.updateLanguage();
+                    this.setupEventListeners();
+                }
+                async loadTranslations() {
+                    try {
+                        const timestamp = new Date().getTime();
+                        const response = await fetch(`locales/${this.currentLang}.json?_=${timestamp}`);
+                        if (!response.ok) throw new Error(`HTTP ${response.status}`);
+                        this.translations = await response.json();
+                    } catch (error) {
+                        console.error('Error loading translations:', error);
+                        if (this.currentLang !== 'en') {
+                            this.currentLang = 'en';
+                            await this.loadTranslations();
+                        }
+                    }
+                }
+                updateLanguage() {
+                    document.documentElement.lang = this.currentLang;
+                    
+                    document.querySelectorAll('[data-i18n]').forEach(element => {
+                        const keys = element.getAttribute('data-i18n').split('.');
+                        const value = this.getNestedValue(this.translations, keys);
+                        
+                        if (element.tagName === 'META') {
+                            element.content = value;
+                        } else if (element.tagName === 'INPUT' && element.hasAttribute('data-i18n-placeholder')) {
+                            element.placeholder = value;
+                        } else {
+                            element.innerHTML = value;
+                        }
+                    });
+                    const selector = document.getElementById('languageSelect');
+                    if (selector) selector.value = this.currentLang;
+                }
+                getNestedValue(obj, keys) {
+                    return keys.reduce((o, i) => o?.[i], obj);
+                }
+                setupEventListeners() {
+                    const selector = document.getElementById('languageSelect');
+                    if (selector) {
+                        selector.addEventListener('change', (e) => {
+                            this.currentLang = e.target.value;
+                            localStorage.setItem('preferredLanguage', this.currentLang);
+                            this.loadTranslations().then(() => this.updateLanguage());
+                        });
+                    }
                 }
             }
-        }
-
-        document.addEventListener('DOMContentLoaded', () => {
+            
             new I18n();
         });
     </script>
