@@ -5,10 +5,10 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title data-i18n="meta.title">Politique de confidentialité - Prospio</title>
     <meta name="description" data-i18n="meta.description" content="Politique de confidentialité de Prospio - Protection de vos données personnelles">
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
     <style>
         * { margin: 0; padding: 0; box-sizing: border-box; font-family: 'Inter', sans-serif; }
-        body { background-color: #f8f9fb; color: #333; line-height: 1.6; }
         
         /* Language Selector */
         .lang-selector {
@@ -24,29 +24,162 @@
             background: white;
             cursor: pointer;
             font-weight: 500;
+            box-shadow: 0 2px 8px rgba(0,0,0,0.1);
         }
         
         /* Navbar */
-        nav { position: sticky; top: 0; background: white; box-shadow: 0 2px 10px rgba(0,0,0,0.05); padding: 1rem 2rem; display: flex; justify-content: space-between; align-items: center; z-index: 1000; }
-        nav .logo { font-size: 1.5rem; font-weight: 700; color: #4f46e5; }
-        nav ul { display: flex; gap: 2rem; list-style: none; }
-        nav ul li a { text-decoration: none; color: #333; font-weight: 500; transition: color 0.3s; }
-        nav ul li a:hover { color: #4f46e5; }
+        nav { 
+            position: sticky; 
+            top: 0; 
+            background: white; 
+            box-shadow: 0 2px 10px rgba(0,0,0,0.05); 
+            padding: 1rem 2rem; 
+            display: flex; 
+            justify-content: space-between; 
+            align-items: center; 
+            z-index: 1000; 
+        }
+        nav .logo { 
+            font-size: 1.5rem; 
+            font-weight: 700; 
+            color: #4f46e5; 
+            text-decoration: none;
+        }
+        nav ul { 
+            display: flex; 
+            gap: 2rem; 
+            list-style: none; 
+        }
+        nav ul li a { 
+            text-decoration: none; 
+            color: #333; 
+            font-weight: 500; 
+            transition: color 0.3s; 
+        }
+        nav ul li a:hover { 
+            color: #4f46e5; 
+        }
         
-        .container { max-width: 800px; margin: 0 auto; padding: 2rem; }
-        header { text-align: center; padding: 3rem 0 2rem; }
-        h1 { font-size: 2.5rem; color: #4f46e5; margin-bottom: 1rem; }
-        .content { background: white; padding: 3rem; border-radius: 12px; box-shadow: 0 4px 15px rgba(0,0,0,0.05); }
-        h2 { color: #4f46e5; margin: 2rem 0 1rem; font-size: 1.5rem; }
-        p { margin-bottom: 1rem; }
-        ul { margin-left: 2rem; margin-bottom: 1rem; }
-        .back { display: inline-block; margin-top: 2rem; color: #4f46e5; text-decoration: none; font-weight: 500; }
-        .back:hover { text-decoration: underline; }
-        footer { background: #1f2937; color: white; padding: 2rem; text-align: center; font-size: 0.9rem; margin-top: 3rem; }
-        footer a { color: #93c5fd; text-decoration: none; }
-        footer a:hover { text-decoration: underline; }
-        .highlight { background-color: #f0f4ff; padding: 0.5rem; border-radius: 4px; }
-        .last-update { text-align: center; margin-bottom: 2rem; color: #666; font-style: italic; }
+        .container { 
+            max-width: 800px; 
+            margin: 0 auto; 
+            padding: 2rem; 
+        }
+        header { 
+            text-align: center; 
+            padding: 3rem 0 2rem; 
+        }
+        h1 { 
+            font-size: 2.5rem; 
+            color: #4f46e5; 
+            margin-bottom: 1rem; 
+        }
+        .last-update { 
+            color: #666; 
+            font-style: italic; 
+            margin-bottom: 2remrem; 
+        }
+        .content { 
+            background: white; 
+            padding: 3rem; 
+            border-radius: 12px; 
+            box-shadow: 0 4px 15px rgba(0,0,0,0.05); 
+        }
+        h2 { 
+            color: #4f46e5; 
+            margin: 2rem 0 1rem; 
+            font-size: 1.5rem; 
+            display: flex;
+            align-items: center;
+            gap: 0.5rem;
+        }
+        h2 i {
+            font-size: 1.2rem;
+        }
+        p { 
+            margin-bottom: 1rem; 
+            line-height: 1.8;
+        }
+        ul { 
+            margin-left: 2rem; 
+            margin-bottom: 1rem; 
+            line-height: 1.8;
+        }
+        li {
+            margin-bottom: 0.5rem;
+        }
+        .info-card {
+            background: #f0f4ff;
+            border-left: 4px solid #4f46e5;
+            padding: 1.5rem;
+            margin: 1.5rem 0;
+            border-radius: 0 8px 8px 0;
+        }
+        .highlight {
+            background-color: #f0f4ff; 
+            padding: 0.3rem 0.6rem; 
+            border-radius: 4px; 
+            font-weight: 500;
+        }
+        .back { 
+            display: inline-flex; 
+            align-items: center;
+            gap: 0.5rem;
+            margin-top: 2rem; 
+            color: #4f46e5; 
+            text-decoration: none; 
+            font-weight: 500; 
+            padding: 0.8rem 1.5rem;
+            border: 2px solid #4f46e5;
+            border-radius: 25px;
+            transition: all 0.3s;
+        }
+        .back:hover { 
+            background: #4f46e5;
+            color: white;
+            text-decoration: none;
+            transform: translateY(-2px);
+            box-shadow: 0 4px 12px rgba(79, 70, 229, 0.3);
+        }
+        footer { 
+            background: #1f2937; 
+            color: white; 
+            padding: 2rem; 
+            text-align: center; 
+            font-size: 0.9rem; 
+            margin-top: 3rem; 
+        }
+        footer a { 
+            color: #93c5fd; 
+            text-decoration: none; 
+        }
+        footer a:hover { 
+            text-decoration: underline; 
+        }
+        
+        /* Responsive */
+        @media (max-width: 768px) {
+            nav {
+                flex-direction: column;
+                gap: 1rem;
+                padding: 1rem;
+            }
+            nav ul {
+                gap: 1rem;
+            }
+            .container {
+                padding: 1rem;
+            }
+            .content {
+                padding: 2rem 1.5rem;
+            }
+            h1 {
+                font-size: 2rem;
+            }
+            ul {
+                margin-left: 1rem;
+            }
+        }
     </style>
 </head>
 <body>
@@ -62,7 +195,7 @@
 
     <!-- Navbar -->
     <nav>
-        <div class="logo" data-i18n="nav.logo">Prospio</div>
+        <a href="index.html" class="logo" data-i18n="nav.logo">Prospio</a>
         <ul>
             <li><a href="index.html" data-i18n="nav.home">Accueil</a></li>
             <li><a href="mentions-legales.html" data-i18n="nav.legal">Mentions légales</a></li>
@@ -77,7 +210,7 @@
         </header>
         
         <div class="content">
-            <h2 data-i18n="privacy.collection.title">1. Collecte des données personnelles</h2>
+            <h2><i class="fas fa-database"></i> <span data-i18n="privacy.collection.title">1. Collecte des données personnelles</span></h2>
             <p data-i18n="privacy.collection.intro">Prospio collecte les données suivantes dans le cadre de ses services :</p>
             <ul>
                 <li data-i18n="privacy.collection.id">Données d'identification : nom, prénom, adresse email, numéro de téléphone</li>
@@ -86,7 +219,7 @@
                 <li data-i18n="privacy.collection.prospecting">Données de prospection : informations collectées via le scraping (avec consentement)</li>
             </ul>
             
-            <h2 data-i18n="privacy.purpose.title">2. Finalités du traitement</h2>
+            <h2><i class="fas fa-bullseye"></i> <span data-i18n="privacy.purpose.title">2. Finalités du traitement</span></h2>
             <p data-i18n="privacy.purpose.intro">Vos données sont utilisées pour :</p>
             <ul>
                 <li data-i18n="privacy.purpose.service">Fournir nos services de prospection et de CRM</li>
@@ -96,7 +229,7 @@
                 <li data-i18n="privacy.purpose.legal">Respecter nos obligations légales et réglementaires</li>
             </ul>
             
-            <h2 data-i18n="privacy.legalBasis.title">3. Base légale du traitement</h2>
+            <h2><i class="fas fa-balance-scale"></i> <span data-i18n="privacy.legalBasis.title">3. Base légale du traitement</span></h2>
             <p data-i18n="privacy.legalBasis.intro">Nous traitons vos données sur les bases légales suivantes :</p>
             <ul>
                 <li><span class="highlight" data-i18n="privacy.legalBasis.consent">Consentement</span> <span data-i18n="privacy.legalBasis.consentDesc">: pour le scraping et l'envoi de communications commerciales</span></li>
@@ -105,7 +238,7 @@
                 <li><span class="highlight" data-i18n="privacy.legalBasis.legal">Obligations légales</span> <span data-i18n="privacy.legalBasis.legalDesc">: pour respecter la réglementation en vigueur</span></li>
             </ul>
             
-            <h2 data-i18n="privacy.retention.title">4. Conservation des données</h2>
+            <h2><i class="fas fa-clock"></i> <span data-i18n="privacy.retention.title">4. Conservation des données</span></h2>
             <p data-i18n="privacy.retention.intro">Vos données sont conservées selon les durées suivantes :</p>
             <ul>
                 <li data-i18n="privacy.retention.customer">Données clients : pendant la durée du contrat et 3 ans après sa résiliation</li>
@@ -114,16 +247,18 @@
                 <li data-i18n="privacy.retention.marketing">Données marketing : 3 ans après le dernier contact</li>
             </ul>
             
-            <h2 data-i18n="privacy.sharing.title">5. Partage des données</h2>
+            <h2><i class="fas fa-share-alt"></i> <span data-i18n="privacy.sharing.title">5. Partage des données</span></h2>
             <p data-i18n="privacy.sharing.intro">Nous ne partageons vos données qu'avec :</p>
             <ul>
                 <li data-i18n="privacy.sharing.providers">Nos sous-traitants techniques (hébergeurs, fournisseurs d'API)</li>
                 <li data-i18n="privacy.sharing.platforms">Les plateformes tierces intégrées (HubSpot, Salesforce, etc.)</li>
                 <li data-i18n="privacy.sharing.authorities">Les autorités compétentes sur demande légale</li>
             </ul>
-            <p data-i18n="privacy.sharing.noSale"><strong>Nous ne vendons jamais vos données personnelles à des tiers.</strong></p>
+            <div class="info-card" data-i18n="privacy.sharing.noSale">
+                <strong>Nous ne vendons jamais vos données personnelles à des tiers.</strong>
+            </div>
             
-            <h2 data-i18n="privacy.rights.title">6. Vos droits</h2>
+            <h2><i class="fas fa-user-shield"></i> <span data-i18n="privacy.rights.title">6. Vos droits</span></h2>
             <p data-i18n="privacy.rights.intro">Conformément au RGPD, vous disposez des droits suivants :</p>
             <ul>
                 <li><strong data-i18n="privacy.rights.access">Droit d'accès</strong> <span data-i18n="privacy.rights.accessDesc">: connaître les données que nous détenons sur vous</span></li>
@@ -133,10 +268,11 @@
                 <li><strong data-i18n="privacy.rights.portability">Droit à la portabilité</strong> <span data-i18n="privacy.rights.portabilityDesc">: récupérer vos données dans un format lisible</span></li>
                 <li><strong data-i18n="privacy.rights.opposition">Droit d'opposition</strong> <span data-i18n="privacy.rights.oppositionDesc">: vous opposer au traitement de vos données</span></li>
             </ul>
+            <div class="info-card" data-i18n="privacy.rights.contact">
+                Pour exercer ces droits, contactez-nous à : <strong>privacy@prospio.app</strong>
+            </div>
             
-            <p data-i18n="privacy.rights.contact">Pour exercer ces droits, contactez-nous à : <strong>privacy@prospio.app</strong></p>
-            
-            <h2 data-i18n="privacy.security.title">7. Sécurité des données</h2>
+            <h2><i class="fas fa-lock"></i> <span data-i18n="privacy.security.title">7. Sécurité des données</span></h2>
             <p data-i18n="privacy.security.intro">Nous mettons en œuvre des mesures de sécurité appropriées pour protéger vos données :</p>
             <ul>
                 <li data-i18n="privacy.security.encryption">Chiffrement des données (SSL/TLS)</li>
@@ -145,7 +281,7 @@
                 <li data-i18n="privacy.security.audits">Audits de sécurité périodiques</li>
             </ul>
             
-            <h2 data-i18n="privacy.cookies.title">8. Cookies</h2>
+            <h2><i class="fas fa-cookie-bite"></i> <span data-i18n="privacy.cookies.title">8. Cookies</span></h2>
             <p data-i18n="privacy.cookies.intro">Nous utilisons des cookies pour :</p>
             <ul>
                 <li data-i18n="privacy.cookies.technical">Fonctionnement technique du site</li>
@@ -154,25 +290,32 @@
             </ul>
             <p data-i18n="privacy.cookies.management">Vous pouvez gérer vos préférences via les paramètres de votre navigateur.</p>
             
-            <h2 data-i18n="privacy.modifications.title">9. Modifications</h2>
+            <h2><i class="fas fa-edit"></i> <span data-i18n="privacy.modifications.title">9. Modifications</span></h2>
             <p data-i18n="privacy.modifications.intro">Nous nous réservons le droit de modifier cette politique à tout moment. Les modifications entreront en vigueur dès leur publication sur le site. Nous vous informerons des modifications significatives par email.</p>
             
-            <h2 data-i18n="privacy.contact.title">10. Contact</h2>
+            <h2><i class="fas fa-envelope"></i> <span data-i18n="privacy.contact.title">10. Contact</span></h2>
             <p data-i18n="privacy.contact.intro">Pour toute question concernant cette politique de confidentialité, contactez-nous :</p>
-            <p>
+            <div class="info-card">
                 <strong data-i18n="privacy.contact.email">Email :</strong> privacy@prospio.app<br>
                 <strong data-i18n="privacy.contact.address">Adresse :</strong> 123 Avenue des Champs-Élysées, 75008 Paris, France<br>
                 <strong data-i18n="privacy.contact.dpo">DPO</strong> : Cameron Adao (dpo@prospio.app)
-            </p>
+            </div>
             
-            <a href="index.html" class="back" data-i18n="privacy.back">← Retour à l'accueil</a>
+            <div style="text-align: center; margin-top: 3rem;">
+                <a href="index.html" class="back" data-i18n="privacy.back">
+                    <i class="fas fa-arrow-left"></i>
+                    Retour à l'accueil
+                </a>
+            </div>
         </div>
     </div>
     
     <footer>
-        <p><span data-i18n="footer.copyright">© 2025 Prospio. Tous droits réservés.</span> | 
-        <a href="mentions-legales.html" data-i18n="footer.legal">Mentions légales</a> | 
-        <a href="politique-confidentialite.html" data-i18n="footer.privacy">Politique de confidentialité</a></p>
+        <p>
+            <span data-i18n="footer.copyright">© 2025 Prospio. Tous droits réservés.</span> | 
+            <a href="mentions-legales.html" data-i18n="footer.legal">Mentions légales</a> | 
+            <a href="politique-confidentialite.html" data-i18n="footer.privacy">Politique de confidentialité</a>
+        </p>
     </footer>
 
     <script>
@@ -201,7 +344,9 @@
 
             async loadTranslations() {
                 try {
-                    const response = await fetch(`locales/${this.currentLang}.json`);
+                    const timestamp = new Date().getTime();
+                    const response = await fetch(`locales/${this.currentLang}.json?_=${timestamp}`);
+                    if (!response.ok) throw new Error(`HTTP ${response.status}`);
                     this.translations = await response.json();
                 } catch (error) {
                     console.error('Error loading translations:', error);
@@ -221,8 +366,10 @@
                     
                     if (element.tagName === 'META') {
                         element.content = value;
+                    } else if (element.tagName === 'INPUT' && element.hasAttribute('data-i18n-placeholder')) {
+                        element.placeholder = value;
                     } else {
-                        element.textContent = value;
+                        element.innerHTML = value;
                     }
                 });
 

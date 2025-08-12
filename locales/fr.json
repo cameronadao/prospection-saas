@@ -3,7 +3,10 @@
       "logo": "Prospio",
       "features": "Fonctionnalités",
       "pricing": "Tarifs",
-      "contact": "Contact"
+      "contact": "Contact",
+      "home": "Accueil",
+      "legal": "Mentions légales",
+      "privacy": "Politique de confidentialité"
     },
     "header": {
       "title": "La prospection IA tout-en-un",
@@ -59,5 +62,134 @@
       "hours": "h",
       "minutes": "m",
       "seconds": "s"
+    },
+    "meta": {
+      "title": "Prospio - Prospection IA Tout-en-un",
+      "description": "Optimisez vos ventes avec notre plateforme de prospection IA tout-en-un"
+    },
+    "legal": {
+      "title": "Mentions légales",
+      "subtitle": "En conformité avec l'article 6 de la loi n° 2004-575 du 21 juin 2004",
+      "editor": {
+        "title": "Éditeur du site",
+        "content": "<strong>Prospio</strong><br>SAS au capital de 10 000 €<br>Siège social : 123 Avenue des Champs-Élysées, 75008 Paris<br>RCS Paris : 123 456 789<br>TVA intracommunautaire : FR12 345 678 901"
+      },
+      "director": {
+        "title": "Directeur de publication",
+        "content": "Cameron Adao<br>Email : contact@prospio.app"
+      },
+      "hosting": {
+        "title": "Hébergeur",
+        "content": "<strong>Netlify</strong><br>610 22nd Street, Suite 315<br>San Francisco, CA 94107<br>États-Unis"
+      },
+      "intellectual": {
+        "title": "Propriété intellectuelle",
+        "content": "L'ensemble du contenu de ce site (textes, images, graphismes, logo, icônes) est la propriété exclusive de Prospio, à l'exception des marques, logos ou contenus appartenant à d'autres sociétés partenaires.",
+        "content2": "Toute reproduction, distribution, modification ou adaptation de ces contenus est strictement interdite sans autorisation écrite préalable."
+      },
+      "liability": {
+        "title": "Limitations de responsabilité",
+        "content": "Prospio s'efforce de fournir des informations précises et à jour sur ce site, mais ne peut garantir l'exactitude, la complétude ou l'actualité des informations fournies.",
+        "content2": "Le site peut contenir des liens vers des sites tiers. Prospio décline toute responsabilité concernant le contenu de ces sites externes."
+      },
+      "law": {
+        "title": "Droit applicable",
+        "content": "Les présentes mentions légales sont régies par le droit français. Tout litige relatif à l'utilisation du site sera soumis à la compétence exclusive des tribunaux français."
+      },
+      "back": "← Retour à l'accueil"
+    },
+    "privacy": {
+      "title": "Politique de confidentialité",
+      "lastUpdate": "Dernière mise à jour : 11 août 2025",
+      "collection": {
+        "title": "1. Collecte des données personnelles",
+        "intro": "Prospio collecte les données suivantes dans le cadre de ses services :",
+        "id": "Données d'identification : nom, prénom, adresse email, numéro de téléphone",
+        "professional": "Données professionnelles : poste, entreprise, secteur d'activité",
+        "connection": "Données de connexion : adresse IP, type de navigateur, heures d'accès",
+        "prospecting": "Données de prospection : informations collectées via le scraping (avec consentement)"
+      },
+      "purpose": {
+        "title": "2. Finalités du traitement",
+        "intro": "Vos données sont utilisées pour :",
+        "service": "Fournir nos services de prospection et de CRM",
+        "experience": "Personnaliser votre expérience utilisateur",
+        "improvement": "Améliorer nos services et fonctionnalités",
+        "communication": "Communiquer avec vous concernant votre compte",
+        "legal": "Respecter nos obligations légales et réglementaires"
+      },
+      "legalBasis": {
+        "title": "3. Base légale du traitement",
+        "intro": "Nous traitons vos données sur les bases légales suivantes :",
+        "consent": "Consentement",
+        "consentDesc": ": pour le scraping et l'envoi de communications commerciales",
+        "contract": "Exécution d'un contrat",
+        "contractDesc": ": pour fournir les services souscrits",
+        "legitimate": "Intérêt légitime",
+        "legitimateDesc": ": pour améliorer nos services et prévenir les fraudes",
+        "legal": "Obligations légales",
+        "legalDesc": ": pour respecter la réglementation en vigueur"
+      },
+      "retention": {
+        "title": "4. Conservation des données",
+        "intro": "Vos données sont conservées selon les durées suivantes :",
+        "customer": "Données clients : pendant la durée du contrat et 3 ans après sa résiliation",
+        "prospecting": "Données de prospection : 1 an maximum (sauf consentement explicite)",
+        "technical": "Données techniques : 13 mois pour les logs de connexion",
+        "marketing": "Données marketing : 3 ans après le dernier contact"
+      },
+      "sharing": {
+        "title": "5. Partage des données",
+        "intro": "Nous ne partageons vos données qu'avec :",
+        "providers": "Nos sous-traitants techniques (hébergeurs, fournisseurs d'API)",
+        "platforms": "Les plateformes tierces intégrées (HubSpot, Salesforce, etc.)",
+        "authorities": "Les autorités compétentes sur demande légale",
+        "noSale": "<strong>Nous ne vendons jamais vos données personnelles à des tiers.</strong>"
+      },
+      "rights": {
+        "title": "6. Vos droits",
+        "intro": "Conformément au RGPD, vous disposez des droits suivants :",
+        "access": "Droit d'accès",
+        "accessDesc": ": connaître les données que nous détenons sur vous",
+        "rectification": "Droit de rectification",
+        "rectificationDesc": ": corriger des données inexactes",
+        "deletion": "Droit de suppression",
+        "deletionDesc": ": supprimer vos données (droit à l'oubli)",
+        "limitation": "Droit à la limitation",
+        "limitationDesc": ": limiter le traitement de vos données",
+        "portability": "Droit à la portabilité",
+        "portabilityDesc": ": récupérer vos données dans un format lisible",
+        "opposition": "Droit d'opposition",
+        "oppositionDesc": ": vous opposer au traitement de vos données",
+        "contact": "Pour exercer ces droits, contactez-nous à : <strong>privacy@prospio.app</strong>"
+      },
+      "security": {
+        "title": "7. Sécurité des données",
+        "intro": "Nous mettons en œuvre des mesures de sécurité appropriées pour protéger vos données :",
+        "encryption": "Chiffrement des données (SSL/TLS)",
+        "access": "Contrôle d'accès strict aux systèmes",
+        "training": "Formations régulières du personnel à la protection des données",
+        "audits": "Audits de sécurité périodiques"
+      },
+      "cookies": {
+        "title": "8. Cookies",
+        "intro": "Nous utilisons des cookies pour :",
+        "technical": "Fonctionnement technique du site",
+        "analytics": "Analyse des performances et du trafic",
+        "personalization": "Personnalisation de votre expérience",
+        "management": "Vous pouvez gérer vos préférences via les paramètres de votre navigateur."
+      },
+      "modifications": {
+        "title": "9. Modifications",
+        "intro": "Nous nous réservons le droit de modifier cette politique à tout moment. Les modifications entreront en vigueur dès leur publication sur le site. Nous vous informerons des modifications significatives par email."
+      },
+      "contact": {
+        "title": "10. Contact",
+        "intro": "Pour toute question concernant cette politique de confidentialité, contactez-nous :",
+        "email": "Email :",
+        "address": "Adresse :",
+        "dpo": "DPO"
+      },
+      "back": "← Retour à l'accueil"
     }
   }

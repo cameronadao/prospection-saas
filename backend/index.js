@@ -18,6 +18,20 @@ app.get('/', (req, res) => {
   res.sendFile(path.join(__dirname, '..', 'index.html'));
 });
 
+// Route pour les pages légales
+app.get('/mentions-legales.html', (req, res) => {
+  res.sendFile(path.join(__dirname, '..', 'mentions-legales.html'));
+});
+
+app.get('/politique-confidentialite.html', (req, res) => {
+  res.sendFile(path.join(__dirname, '..', 'politique-confidentialite.html'));
+});
+
+// Route pour les fichiers de traduction
+app.get('/locales/:lang.json', (req, res) => {
+  res.sendFile(path.join(__dirname, '..', 'locales', req.params.lang + '.json'));
+});
+
 // Route API pour vérifier le backend
 app.get('/api', (req, res) => {
   res.json({ 
@@ -30,5 +44,4 @@ app.get('/api', (req, res) => {
 // Démarrer le serveur
 app.listen(PORT, () => {
   console.log(`🚀 Serveur démarré sur http://localhost:${PORT}`);
-  console.log(`📄 Page Prospio : http://localhost:${PORT}`);
 });
